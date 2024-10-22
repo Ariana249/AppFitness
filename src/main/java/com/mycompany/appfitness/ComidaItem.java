@@ -4,20 +4,22 @@
  */
 package com.mycompany.appfitness;
 
+import java.util.Scanner;
+
 /**
  *
  * @author martin
  */
 public class ComidaItem {
     private String nombreComida;
-    private int cantProteina;
-    private int calorias;
-    private int grasas;
+    private float cantProteina;
+    private float calorias;
+    private float grasas;
 
     public ComidaItem() {
     }
 
-    public ComidaItem(String nombreComida, int cantProteina, int calorias, int grasas) {
+    public ComidaItem(String nombreComida, float cantProteina, float calorias, float grasas) {
         this.nombreComida = nombreComida;
         this.cantProteina = cantProteina;
         this.calorias = calorias;
@@ -32,7 +34,7 @@ public class ComidaItem {
         this.nombreComida = nombreComida;
     }
 
-    public int getCantProteina() {
+    public float getCantProteina() {
         return cantProteina;
     }
 
@@ -40,7 +42,7 @@ public class ComidaItem {
         this.cantProteina = cantProteina;
     }
 
-    public int getCalorias() {
+    public float getCalorias() {
         return calorias;
     }
 
@@ -48,7 +50,7 @@ public class ComidaItem {
         this.calorias = calorias;
     }
 
-    public int getGrasas() {
+    public float getGrasas() {
         return grasas;
     }
 
@@ -58,6 +60,15 @@ public class ComidaItem {
     
     //Metodos
     public void agregarComida(){
-        
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Ingrese el nombre de la comida");
+       String nombre = sc.nextLine();
+       System.out.println("Ingrese la cantidad de proteinas de la comida");
+       float proteina = sc.nextFloat();
+       System.out.println("Ingrese la cantidad de calorias de la comida");
+       float calorias = sc.nextFloat();
+       System.out.println("Ingrese la cantidad de grasas de la comida");
+       float grasas = sc.nextFloat();
+       ComidaItem nuevaComida = new ComidaItem(nombre, proteina, calorias, grasas);
     }
 }

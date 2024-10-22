@@ -12,8 +12,8 @@ public class Yoga extends ActividadFisica {
     private String poses;
     private int tiempo;
 
-    public Yoga(String poses, int tiempo, int series, int repeticiones) {
-        super(series, repeticiones);
+    public Yoga(String poses, int tiempo, int series, int repeticiones, float caloriasAQuemar) {
+        super(series, repeticiones, caloriasAQuemar);
         this.poses = poses;
         this.tiempo = tiempo;
     }

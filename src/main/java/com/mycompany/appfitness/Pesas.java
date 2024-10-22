@@ -17,8 +17,8 @@ public class Pesas extends ActividadFisica {
     public Pesas() {
     }
 
-    public Pesas(String tipoPesas, Float peso, String ejercicio, String grupoMuscular, int series, int repeticiones) {
-        super(series, repeticiones);
+    public Pesas(String tipoPesas, Float peso, String ejercicio, String grupoMuscular, int series, int repeticiones, float caloriasAQuemar) {
+        super(series, repeticiones, caloriasAQuemar);
         this.tipoPesas = tipoPesas;
         this.peso = peso;
         this.ejercicio = ejercicio;

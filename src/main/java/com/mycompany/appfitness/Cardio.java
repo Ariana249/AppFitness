@@ -13,11 +13,12 @@ public class Cardio extends ActividadFisica {
     private float distancia;
     private int tiempo;
 
-    public Cardio(String tipo, float distancia, int tiempo, int series, int repeticiones) {
-        super(series, repeticiones);
+    public Cardio(String tipo, float distancia, int tiempo, int series, int repeticiones, float caloriasAQuemar) {
+        super(series, repeticiones,caloriasAQuemar);
         this.tipo = tipo;
         this.distancia = distancia;
         this.tiempo = tiempo;
+        
     }
 
     public Cardio() {

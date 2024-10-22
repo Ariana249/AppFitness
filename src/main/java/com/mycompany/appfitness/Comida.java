@@ -37,7 +37,9 @@ public class Comida {
     }
     
     //Metodos
-    public void caloriasGanadas(){
+    public float caloriasGanadas(){
+        float calGanadas = 0;
+        return calGanadas;
         
     }
     

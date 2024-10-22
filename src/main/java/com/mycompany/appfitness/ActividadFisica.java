@@ -12,12 +12,15 @@ public abstract class ActividadFisica {
     //Atributos
     private int series;
     private int repeticiones;
-    
+    private boolean completado;
+    private float caloriasAQuemar;
     //Constructor
 
-    public ActividadFisica(int series, int repeticiones) {
+    public ActividadFisica(int series, int repeticiones, float caloriasAQuemar) {
         this.series = series;
         this.repeticiones = repeticiones;
+        this.completado = false;
+        this.caloriasAQuemar = caloriasAQuemar;
     }
 
     public ActividadFisica() {
@@ -42,7 +45,7 @@ public abstract class ActividadFisica {
     
     //Metodos
     public void caloriasQuemadas(){
-        
+         
     }
     public void inicializarEntrenamiento(){
         
@@ -50,8 +53,8 @@ public abstract class ActividadFisica {
     public void finalizarEntrenamiento(){
         
     }
-    public void completado(){
-        //boolean
+    public void actFisiscaCompletada(){
+        this.completado = true;
     }
     
     
