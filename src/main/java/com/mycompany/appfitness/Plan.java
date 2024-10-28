@@ -12,6 +12,10 @@ public class Plan {
     //Atributos
     private int cantDias;
     private String objetivo;
+    private Dieta dieta;
+    private Pesas pesas;
+    private Yoga yoga;
+    private Cardio cardio;
     
     //Constructor
 
@@ -37,10 +41,37 @@ public class Plan {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
-    
-    //Metodos
-    
-    
-    
+      
+    public Dieta getDieta() {
+        return dieta;
+    }
+
+    public void setDieta(Dieta dieta) {
+        this.dieta = dieta;
+    }
+
+    public Pesas getPesas() {
+        return pesas;
+    }
+
+    public void setPesas(Pesas pesas) {
+        this.pesas = pesas;
+    }
+
+    public Yoga getYoga() {
+        return yoga;
+    }
+
+    public void setYoga(Yoga yoga) {
+        this.yoga = yoga;
+    }
+
+    public Cardio getCardio() {
+        return cardio;
+    }
+
+    public void setCardio(Cardio cardio) {
+        this.cardio = cardio;
+    }
     
 }
