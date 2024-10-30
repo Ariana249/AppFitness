@@ -53,7 +53,8 @@ public class LoginController implements Initializable {
             this.dbstatus.setText("Sin Conexion");
         }
     }
-
+    
+    //Esto es para Logearte
     @FXML
     public void Login(ActionEvent event) {
         try {
