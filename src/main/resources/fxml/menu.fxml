@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.MenuController">
+   <children>
+      <Pane prefHeight="625.0" prefWidth="725.0" style="-fx-background-color: #2a2f2b;">
+         <children>
+            <Label layoutX="273.0" layoutY="36.0" prefHeight="41.0" prefWidth="180.0" text="FITCOMPILER" textFill="#4e9564">
+               <font>
+                  <Font name="Verdana Italic" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="96.0" prefHeight="35.0" prefWidth="637.0" text="Bienvenido a FitCompiler, esta app te permitirá seguir tus entrenamientos" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="125.0" prefHeight="35.0" prefWidth="637.0" text="y registrar tu progreso físico, ayudándote a alcanzar tus objetivos." textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="160.0" prefHeight="35.0" prefWidth="637.0" text="Para comenzar, cuéntanos un poco sobre ti: ¿Cuál es tu nombre, peso y " textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="184.0" prefHeight="35.0" prefWidth="637.0" text="altura? ¡Estamos aquí para apoyarte en cada paso de tu viaje hacia una" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="210.0" prefHeight="35.0" prefWidth="637.0" text="vida más saludable!" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="dbstatus" layoutX="558.0" layoutY="46.0" prefHeight="17.0" prefWidth="108.0" />
+            <Label layoutX="176.0" layoutY="289.0" prefHeight="24.0" prefWidth="63.0" text="Nombre" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="382.0" prefHeight="24.0" prefWidth="45.0" text="Peso" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="334.0" prefHeight="24.0" prefWidth="45.0" text="Altura" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nombreUsuario" layoutX="266.0" layoutY="288.0" prefHeight="26.0" prefWidth="180.0" promptText="Nombre" />
+            <TextField fx:id="nombreUsuario1" layoutX="266.0" layoutY="333.0" prefHeight="26.0" prefWidth="180.0" promptText="Altura" />
+            <TextField fx:id="nombreUsuario2" layoutX="266.0" layoutY="381.0" prefHeight="26.0" prefWidth="180.0" promptText="Peso" />
+            <ComboBox layoutX="266.0" layoutY="426.0" prefHeight="26.0" prefWidth="180.0" promptText="Objetivo" />
+            <Label layoutX="176.0" layoutY="427.0" prefHeight="24.0" prefWidth="63.0" text="Objetivo" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
