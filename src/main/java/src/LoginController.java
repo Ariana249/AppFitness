@@ -65,7 +65,6 @@ public class LoginController implements Initializable {
                 loginMenu();
 
             } else {
-                JOptionPane.showMessageDialog(null, "LOS DATOS SON INCORRECTOS.");
                 this.loginStatus.setText("Datos Incorrectos");
             }
         } catch (Exception e) {
