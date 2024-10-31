@@ -17,15 +17,14 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
     LoginModel modeloLogin = new LoginModel();
-
+    
     Connection conn = ConeccionDB.connect();
-
+    
     @FXML
     private Label dbstatus;
     @FXML
@@ -63,8 +62,9 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage) this.botonIngresar.getScene().getWindow();
                 stage.close();
 
-                loginMenu();
-
+                AppController ac = new AppController();
+                ac.IniciarEscenaApp();
+                
             } else {
                 this.loginStatus.setText("Datos Incorrectos");
             }
@@ -134,25 +134,6 @@ public class LoginController implements Initializable {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
             }
-        }
-    }
-
-    public void loginMenu() {
-        try {
-            Stage menu = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            Pane root = (Pane) loader.load(getClass().getResource("/fxml/menu.fxml").openStream());
-
-            MenuController menuController = (MenuController) loader.getController();
-
-            Scene scene = new Scene(root);
-            menu.setScene(scene);
-            menu.setTitle("App Fitness");
-            menu.setResizable(false);
-            menu.show();
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

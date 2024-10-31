@@ -4,10 +4,6 @@
  */
 package com.mycompany.appfitness;
 
-/**
- *
- * @author martin
- */
 public class Usuario {
     //Atributos
     private String nombre;
