@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -45,12 +46,23 @@
             <Font name="Verdana Italic" size="20.0" />
          </font>
       </Label>
-      <Hyperlink alignment="CENTER" layoutX="253.0" layoutY="611.0" text="Cerrar Sesion" textAlignment="CENTER" textFill="#4e9564" underline="true">
+      <Hyperlink fx:id="salir" alignment="CENTER" layoutX="253.0" layoutY="611.0" onAction="#CerrarSesion" text="Cerrar Sesion" textAlignment="CENTER" textFill="#4e9564" underline="true">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Hyperlink>
-      <Button layoutX="75.0" layoutY="152.0" mnemonicParsing="false" onAction="#Usuario" opacity="0.0" prefHeight="103.0" prefWidth="447.0" />
-      <Button layoutX="75.0" layoutY="302.0" mnemonicParsing="false" onAction="#Usuario" opacity="0.0" prefHeight="103.0" prefWidth="447.0" />
+      <Button layoutX="75.0" layoutY="152.0" mnemonicParsing="false" onAction="#Usuario" opacity="0.0" prefHeight="103.0" prefWidth="447.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="75.0" layoutY="302.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.0" prefHeight="103.0" prefWidth="447.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="74.0" layoutY="452.0" mnemonicParsing="false" onAction="#Dieta" opacity="0.0" prefHeight="103.0" prefWidth="447.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

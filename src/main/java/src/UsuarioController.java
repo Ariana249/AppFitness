@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
-public class MenuController implements Initializable {
+public class UsuarioController implements Initializable {
     
     Connection conn = ConeccionDB.connect();
     
@@ -65,9 +65,6 @@ public class MenuController implements Initializable {
                     
                     Stage stage = (Stage)this.botonListo.getScene().getWindow();
                     stage.close();
-                    
-                    AppController ac = new AppController();
-                    ac.IniciarEscenaApp();
                     
                     
                 } catch (Exception e) {
