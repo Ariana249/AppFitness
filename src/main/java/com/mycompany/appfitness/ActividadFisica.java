@@ -13,14 +13,13 @@ public abstract class ActividadFisica {
     private int series;
     private int repeticiones;
     private boolean completado;
-    private float caloriasAQuemar;
+    
     //Constructor
 
-    public ActividadFisica(int series, int repeticiones, float caloriasAQuemar) {
+    public ActividadFisica(int series, int repeticiones) {
         this.series = series;
         this.repeticiones = repeticiones;
         this.completado = false;
-        this.caloriasAQuemar = caloriasAQuemar;
     }
 
     public ActividadFisica() {
@@ -44,9 +43,7 @@ public abstract class ActividadFisica {
     }
     
     //Metodos
-    public void caloriasQuemadas(){
-         
-    }
+
     public void inicializarEntrenamiento(){
         
     }

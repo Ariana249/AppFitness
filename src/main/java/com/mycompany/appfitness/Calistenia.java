@@ -16,7 +16,7 @@ public class Calistenia extends ActividadFisica{
     }
 
     public Calistenia(String ejercicio, String grupoMuscular, int series, int repeticiones, float caloriasAQuemar) {
-        super(series, repeticiones, caloriasAQuemar);
+        super(series, repeticiones);
         this.ejercicio = ejercicio;
         this.grupoMuscular = grupoMuscular;
     }    

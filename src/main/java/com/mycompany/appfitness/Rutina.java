@@ -8,7 +8,7 @@ package com.mycompany.appfitness;
  *
  * @author martin
  */
-public class Plan {
+public class Rutina implements CrearRegistro {
     //Atributos
     private int cantDias;
     private String objetivo;
@@ -19,7 +19,7 @@ public class Plan {
     
     //Constructor
 
-    public Plan(int cantDias, String objetivo) {
+    public Rutina(int cantDias, String objetivo) {
         this.cantDias = cantDias;
         this.objetivo = objetivo;
     }
@@ -56,6 +56,11 @@ public class Plan {
 
     public void setPesas(Pesas pesas) {
         this.pesas = pesas;
+    }
+
+    @Override
+    public void crear() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -1,5 +1,6 @@
 package src;
 
+import com.mycompany.appfitness.Usuario;
 import javax.swing.JOptionPane;
 import java.io.IOException;
 import java.net.URL;
@@ -99,6 +100,7 @@ public class LoginController implements Initializable {
 
     @FXML
     public void CrearCuenta(ActionEvent evento) {
+        Usuario user = new Usuario();
         String usuario = this.regUsuario.getText();
         String clave = this.regClave.getText();
         String email = this.email.getText();
