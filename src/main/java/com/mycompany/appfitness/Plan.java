@@ -14,8 +14,8 @@ public class Plan {
     private String objetivo;
     private Dieta dieta;
     private Pesas pesas;
-    private Yoga yoga;
-    private Cardio cardio;
+    private Calistenia calistenia;
+    
     
     //Constructor
 
@@ -56,22 +56,6 @@ public class Plan {
 
     public void setPesas(Pesas pesas) {
         this.pesas = pesas;
-    }
-
-    public Yoga getYoga() {
-        return yoga;
-    }
-
-    public void setYoga(Yoga yoga) {
-        this.yoga = yoga;
-    }
-
-    public Cardio getCardio() {
-        return cardio;
-    }
-
-    public void setCardio(Cardio cardio) {
-        this.cardio = cardio;
     }
     
 }

@@ -8,23 +8,19 @@ package com.mycompany.appfitness;
  *
  * @author martin
  */
-public class Pesas extends ActividadFisica {
+public class Pesas extends Calistenia {
     private String tipoPesas;
-    private Float peso;
-    private String ejercicio;
-    private String grupoMuscular;
+    private Float peso;    
 
     public Pesas() {
     }
 
     public Pesas(String tipoPesas, Float peso, String ejercicio, String grupoMuscular, int series, int repeticiones, float caloriasAQuemar) {
-        super(series, repeticiones, caloriasAQuemar);
+        super(ejercicio, grupoMuscular, series, repeticiones, caloriasAQuemar);
         this.tipoPesas = tipoPesas;
         this.peso = peso;
-        this.ejercicio = ejercicio;
-        this.grupoMuscular = grupoMuscular;
-    }
-
+    }        
+    
     public String getTipoPesas() {
         return tipoPesas;
     }
@@ -41,21 +37,7 @@ public class Pesas extends ActividadFisica {
         this.peso = peso;
     }
 
-    public String getEjercicio() {
-        return ejercicio;
-    }
-
-    public void setEjercicio(String ejercicio) {
-        this.ejercicio = ejercicio;
-    }
-
-    public String getGrupoMuscular() {
-        return grupoMuscular;
-    }
-
-    public void setGrupoMuscular(String grupoMuscular) {
-        this.grupoMuscular = grupoMuscular;
-    }
+    
 
     
     
