@@ -12,7 +12,7 @@
    <children>
       <Pane prefHeight="524.0" prefWidth="682.0" style="-fx-background-color: #2a2f2b;">
          <children>
-            <Label layoutX="251.0" layoutY="26.0" prefHeight="41.0" prefWidth="180.0" text="¡¡BIENVENIDA!!" textFill="#4e9564">
+            <Label layoutX="251.0" layoutY="26.0" prefHeight="41.0" prefWidth="230.0" text="¡¡BIENVENIDO!!" textFill="#4e9564">
                <font>
                   <Font name="Verdana Italic" size="25.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="45.0" layoutY="100.0" prefHeight="24.0" prefWidth="600.0" text="Completa los siguientes campos asi podremos mantener tus cambios guardados" textFill="WHITE">
+            <Label layoutX="155.0" layoutY="101.0" prefHeight="24.0" prefWidth="422.0" text="Completa los siguientes campos asi podremos empezar" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
