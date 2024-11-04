@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author martin
  */
-public class Dieta implements CrearRegistro{
+public class Dieta {
     private ArrayList<Comida> lunes;
     private ArrayList<Comida> martes;
     private ArrayList<Comida> miercoles;
@@ -114,8 +114,4 @@ public class Dieta implements CrearRegistro{
         this.completado = true;
     }
 
-    @Override
-    public void crear() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

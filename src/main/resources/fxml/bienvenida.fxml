@@ -12,23 +12,23 @@
    <children>
       <Pane prefHeight="524.0" prefWidth="682.0" style="-fx-background-color: #2a2f2b;">
          <children>
-            <Label layoutX="251.0" layoutY="26.0" prefHeight="41.0" prefWidth="180.0" text="¡¡BIENVENIDA!!" textFill="#4e9564">
+            <Label layoutX="234.0" layoutY="26.0" prefHeight="41.0" prefWidth="205.0" text="¡¡BIENVENIDA!!" textFill="#4e9564">
                <font>
                   <Font name="Verdana Italic" size="25.0" />
                </font>
             </Label>
             <Label fx:id="dbstatus" layoutX="558.0" layoutY="46.0" prefHeight="17.0" prefWidth="108.0" />
-            <Label layoutX="174.0" layoutY="184.0" prefHeight="24.0" prefWidth="63.0" text="Nombre" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="184.0" prefHeight="24.0" prefWidth="81.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="183.0" layoutY="277.0" prefHeight="24.0" prefWidth="45.0" text="Peso" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="277.0" prefHeight="24.0" prefWidth="81.0" text="Peso" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="183.0" layoutY="229.0" prefHeight="24.0" prefWidth="45.0" text="Altura" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="229.0" prefHeight="24.0" prefWidth="81.0" text="Altura" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
@@ -37,13 +37,13 @@
             <TextField fx:id="alturaIngresada" layoutX="264.0" layoutY="228.0" prefHeight="26.0" prefWidth="81.0" promptText="Altura" />
             <TextField fx:id="pesoIngresado" layoutX="264.0" layoutY="276.0" prefHeight="26.0" prefWidth="81.0" promptText="Peso" />
             <ComboBox fx:id="objetivo" layoutX="264.0" layoutY="321.0" prefHeight="26.0" prefWidth="180.0" promptText="Objetivo" />
-            <Label layoutX="174.0" layoutY="322.0" prefHeight="24.0" prefWidth="63.0" text="Objetivo" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="322.0" prefHeight="24.0" prefWidth="81.0" text="Objetivo" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
             <!-- onAction = nuevo metodo que llama a la escena-->
-            <Button fx:id="botonContinuar" layoutX="264.0" layoutY="367.0" mnemonicParsing="false" onAction="#Continuar" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Todo Listo!" />
+            <Button fx:id="botonContinuar" layoutX="264.0" layoutY="367.0" mnemonicParsing="false" onAction="#Continuar" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Continuar" />
             <Label layoutX="354.0" layoutY="229.0" prefHeight="24.0" prefWidth="26.0" text="cm" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />

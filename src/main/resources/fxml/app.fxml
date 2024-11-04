@@ -49,12 +49,22 @@
             <Font name="Verdana Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="110.0" layoutY="348.0" text="Crear Rutina" textFill="WHITE">
+      <Label layoutX="90.0" layoutY="348.0" text="Agregar Ejercicio" textFill="WHITE">
          <font>
             <Font name="Verdana Bold Italic" size="15.0" />
          </font>
       </Label>
       <Label layoutX="115.0" layoutY="494.0" text="Crear Dieta" textFill="WHITE">
+         <font>
+            <Font name="Verdana Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="259.0" layoutY="348.0" text="Eliminar Ejercicio" textFill="WHITE">
+         <font>
+            <Font name="Verdana Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="430.0" layoutY="348.0" text="Mostrar Rutina" textFill="WHITE">
          <font>
             <Font name="Verdana Bold Italic" size="15.0" />
          </font>
@@ -92,6 +102,28 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </BorderPane>
+      <BorderPane layoutX="253.0" layoutY="304.0" prefHeight="106.0" prefWidth="157.0" style="-fx-border-color: #4e9564;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <center>
+            <StackPane prefHeight="104.0" prefWidth="168.0" style="-fx-border-color: #4e9564;" BorderPane.alignment="CENTER" />
+         </center>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </BorderPane>
+      <BorderPane layoutX="418.0" layoutY="304.0" prefHeight="106.0" prefWidth="157.0" style="-fx-border-color: #4e9564;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <center>
+            <StackPane prefHeight="104.0" prefWidth="168.0" style="-fx-border-color: #4e9564;" BorderPane.alignment="CENTER" />
+         </center>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </BorderPane>
       <Button layoutX="79.0" layoutY="148.0" mnemonicParsing="false" onAction="#Usuario" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -99,14 +131,31 @@
          <font>
             <Font name="Verdana Italic" size="13.0" />
          </font></Button>
-      <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" onAction="#AgregarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Button layoutX="84.0" layoutY="451.0" mnemonicParsing="false" onAction="#Dieta" opacity="0.27" prefHeight="106.0" prefWidth="157.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="256.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

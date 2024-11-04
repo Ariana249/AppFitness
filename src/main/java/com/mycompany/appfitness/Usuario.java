@@ -23,8 +23,6 @@ public class Usuario {
         this.objetivo = objetivo;
         
     }
-
-    
     
     //Getters & Setters
 

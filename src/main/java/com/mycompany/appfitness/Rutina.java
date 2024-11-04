@@ -1,18 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.appfitness;
 
-/**
- *
- * @author martin
- */
-public class Rutina implements CrearRegistro {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import src.ConeccionDB;
+
+public class Rutina implements CrearRutina {
     //Atributos
     private int cantDias;
     private String objetivo;
-    private Dieta dieta;
     private Pesas pesas;
     private Calistenia calistenia;
     
@@ -42,14 +38,6 @@ public class Rutina implements CrearRegistro {
         this.objetivo = objetivo;
     }
       
-    public Dieta getDieta() {
-        return dieta;
-    }
-
-    public void setDieta(Dieta dieta) {
-        this.dieta = dieta;
-    }
-
     public Pesas getPesas() {
         return pesas;
     }
@@ -57,9 +45,41 @@ public class Rutina implements CrearRegistro {
     public void setPesas(Pesas pesas) {
         this.pesas = pesas;
     }
+    
+    Connection conn = ConeccionDB.connect();
 
     @Override
-    public void crear() {
+    public void agregarEjercicio(String nombre, int repeticiones, int series, String parteCuerpo) {
+        
+        try {
+            
+            String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, parteCuerpo) VALUES (?,?,?,?)";
+            
+            PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
+            
+            pr.setString(1, nombre);
+            pr.setInt(2, series);
+            pr.setInt(3, repeticiones);
+            pr.setString(4, parteCuerpo);
+            
+            pr.executeQuery();
+            
+            pr.close();
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }
+
+    @Override
+    public void eliminarEjercicio(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mostrarRutina() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

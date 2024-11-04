@@ -1,5 +1,6 @@
 package src;
 
+import opciones.OpcionObjetivo;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,7 +33,7 @@ public class UsuarioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        this.objetivo.setItems(FXCollections.observableArrayList(Opcion.values()));
+        this.objetivo.setItems(FXCollections.observableArrayList(OpcionObjetivo.values()));
         objetivo.setValue("Objetivo");
 
     }

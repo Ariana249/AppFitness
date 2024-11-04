@@ -1,15 +1,15 @@
-package src;
+package opciones;
 
-public enum Opcion {
+public enum OpcionObjetivo {
     Aumentar_Peso, Bajar_Peso;
     
-    private Opcion(){}
+    private OpcionObjetivo(){}
     
     public String value(){
         return name();
     }
     
-    public static Opcion fromvalue(String v){
+    public static OpcionObjetivo fromvalue(String v){
         return valueOf(v);
     }
     

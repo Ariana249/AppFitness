@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConeccionDB {
-
+    
+    //Iniciamos la coneccion con nuestra base de datos que es un archivo .sqlite que esta en nuestra carpeta src del proyecto
     private static final String DB_URL = "jdbc:sqlite:src/appsystem.sqlite";
-
+    
+    //Creamos el metodo por el cual conectarla
     public static Connection connect() {
         Connection conn = null;
         try {
