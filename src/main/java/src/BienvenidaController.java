@@ -1,17 +1,14 @@
 package src;
 
-import com.mycompany.appfitness.AppFitness;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -20,8 +17,9 @@ import javax.swing.JOptionPane;
 import opciones.OpcionObjetivo;
 
 public class BienvenidaController implements Initializable {
-Connection conn = ConeccionDB.connect();
-    
+
+    Connection conn = ConeccionDB.connect();
+
     @FXML
     private ComboBox objetivo;
     @FXML
@@ -32,6 +30,7 @@ Connection conn = ConeccionDB.connect();
     private TextField pesoIngresado;
     @FXML
     private Button botonContinuar;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.objetivo.setItems(FXCollections.observableArrayList(OpcionObjetivo.values()));
@@ -44,7 +43,7 @@ Connection conn = ConeccionDB.connect();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
         String opcion = this.objetivo.getValue().toString();
-        
+
         if (nombre.isEmpty() || altura.isEmpty() || peso.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe Ingresar los Datos para continuar.");
         } else {
@@ -52,55 +51,35 @@ Connection conn = ConeccionDB.connect();
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
                 try {
-                    String sql = "INSERT INTO usuario (nombre, peso, altura, plan) VALUES (?, ?, ?, ?)";
-                    
+                    String sql = "INSERT INTO usuario (nombre, peso, altura, objetivo) VALUES (?, ?, ?, ?)";
+
                     PreparedStatement pr = conn.prepareStatement(sql);
                     pr.setString(1, nombre);
                     pr.setString(2, peso);
                     pr.setString(3, altura);
                     pr.setString(4, opcion);
-                    
+
                     pr.executeUpdate();
                     pr.close();
-                    
-                    Stage stage = (Stage)this.botonContinuar.getScene().getWindow();
+
+                    Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
                     stage.close();
-                    
-                    
-                } catch (Exception e) {
+
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
         try {
-            
-            Stage stage = (Stage)this.botonContinuar.getScene().getWindow();
+
+            Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
             stage.close();
-            
-             App ccc =  new App();
-             ccc.AbrirEscena("/fxml/app.fxml");
-            
+
+            App a = new App();
+            a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+
         } catch (Exception e) {
         }
     }
-   
-    public void iniciarescenaBienvenida(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/bienvenida.fxml"));
-            Parent root = loader.load();
 
-            Scene scene = new Scene(root);
-
-            Stage s = new Stage();
-            s.setScene(scene);
-            s.setTitle("BIENVENIDA");
-            s.show();
-        } catch (Exception e) {
-        }
-}
-@FXML
-    public void Listo(ActionEvent event) {
-        
-      
-    }
 }

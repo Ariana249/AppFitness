@@ -1,5 +1,6 @@
 package src;
 
+import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -23,19 +24,22 @@ public class App extends Application {
     public static void main(String[] args){
         launch(args);
     } 
-    public void AbrirEscena(String archivo ) {
-        
+    
+    //El metodo sirve para abrir escenas en donde le pasamos como parametro la direccion del archivo fxml y le asignamos un titulo
+    public void AbrirEscena(String direccion, String titulo) {
     try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(archivo));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(direccion));
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
 
             Stage s = new Stage();
             s.setScene(scene);
-            s.setTitle("APP FITNESS");
+            s.setTitle(titulo);
             s.show();
-        } catch (Exception e) {
+            
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-}
+    }
 }

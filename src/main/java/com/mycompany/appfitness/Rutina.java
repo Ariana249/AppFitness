@@ -49,18 +49,18 @@ public class Rutina implements CrearRutina {
     Connection conn = ConeccionDB.connect();
 
     @Override
-    public void agregarEjercicio(String nombre, int repeticiones, int series, String parteCuerpo) {
+    public void agregarEjercicio(String nombre, int repeticiones, int series, String tipo) {
         
         try {
             
-            String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, parteCuerpo) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, tipo) VALUES (?,?,?,?)";
             
             PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
             
             pr.setString(1, nombre);
             pr.setInt(2, series);
             pr.setInt(3, repeticiones);
-            pr.setString(4, parteCuerpo);
+            pr.setString(4, tipo);
             
             pr.executeQuery();
             

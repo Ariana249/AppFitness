@@ -9,10 +9,7 @@ import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -25,7 +22,7 @@ public class LoginController implements Initializable {
     LoginModel modeloLogin = new LoginModel();
     //Inicializamos conn como atributo Connection para tener la coneccion con la base de datos
     Connection conn = ConeccionDB.connect();
-    
+
     @FXML
     private Label dbstatus;
     @FXML
@@ -44,6 +41,10 @@ public class LoginController implements Initializable {
     private TextField email;
     @FXML
     private Button botonCrearCuenta;
+    @FXML
+    private Hyperlink registrarse;
+    @FXML
+    private Button volver;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,7 +54,7 @@ public class LoginController implements Initializable {
             this.dbstatus.setText("Sin Conexion");
         }
     }
-    
+
     //Esto es para Logearte
     @FXML
     public void Login(ActionEvent event) {
@@ -63,9 +64,9 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage) this.botonIngresar.getScene().getWindow();
                 stage.close();
 
-                AppController ac = new AppController();
-                ac.IniciarEscenaApp();
-                
+                App a = new App();
+                a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+
             } else {
                 this.loginStatus.setText("Datos Incorrectos");
             }
@@ -75,27 +76,12 @@ public class LoginController implements Initializable {
 
     @FXML
     public void Registrar(ActionEvent evento) {
-        try {
-            // Cargar el archivo FXML para la ventana de registro
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registrar.fxml"));
-            Parent root = loader.load();
-
-            // Crear una nueva escena con el contenido de registrar.fxml
-            Scene scene = new Scene(root);
-
-            // Crear una nueva ventana (Stage)
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Fitness App Registrar");
-
-            // Mostrar la nueva ventana
-            stage.show();
-
-            // Cerrar la ventana de login si es necesario
-            ((Stage) ((Hyperlink) evento.getSource()).getScene().getWindow()).close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Cerrar la ventana de login
+        Stage stage = (Stage) this.registrarse.getScene().getWindow();
+        stage.close();
+        //Abre la escena registrar
+        App a = new App();
+        a.AbrirEscena("/fxml/registrar.fxml","Fitness App Registrar");
     }
 
     @FXML
@@ -126,16 +112,26 @@ public class LoginController implements Initializable {
 
                 // Cierra el PreparedStatement
                 pr.close();
-                
-                Stage stage = (Stage)this.botonCrearCuenta.getScene().getWindow();
+
+                Stage stage = (Stage) this.botonCrearCuenta.getScene().getWindow();
                 stage.close();
-                
-                BienvenidaController bc = new BienvenidaController();
-                bc.iniciarescenaBienvenida();
-                
+
+                App a = new App();
+                a.AbrirEscena("/fxml/bienvenida.fxml", "Fitness App");
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
             }
         }
     }
+    
+    public void Volver(ActionEvent event) {
+        Stage s = (Stage)this.volver.getScene().getWindow();
+        s.close();
+        
+        App a = new App();
+        a.AbrirEscena("/fxml/login.fxml", "Fitness App Login");
+        
+    }
+    
 }

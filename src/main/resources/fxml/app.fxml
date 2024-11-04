@@ -44,7 +44,12 @@
             <Font name="Arial" size="13.0" />
          </font>
       </Hyperlink>
-      <Label layoutX="89.0" layoutY="191.0" text="Actualizar Datos" textFill="WHITE">
+      <Label layoutX="134.0" layoutY="191.0" text="Perfil" textFill="WHITE">
+         <font>
+            <Font name="Verdana Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="191.0" text="Actualizar Datos" textFill="WHITE">
          <font>
             <Font name="Verdana Bold Italic" size="15.0" />
          </font>
@@ -69,7 +74,18 @@
             <Font name="Verdana Bold Italic" size="15.0" />
          </font>
       </Label>
-      <BorderPane layoutX="79.0" layoutY="148.0" prefHeight="106.0" prefWidth="157.0" style="-fx-border-color: #4e9564;">
+      <BorderPane layoutX="83.0" layoutY="148.0" prefHeight="106.0" prefWidth="157.0" style="-fx-border-color: #4e9564;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <center>
+            <StackPane prefHeight="104.0" prefWidth="168.0" style="-fx-border-color: #4e9564;" BorderPane.alignment="CENTER" />
+         </center>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </BorderPane>
+      <BorderPane layoutX="253.0" layoutY="148.0" prefHeight="106.0" prefWidth="157.0" style="-fx-border-color: #4e9564;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -124,14 +140,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </BorderPane>
-      <Button layoutX="79.0" layoutY="148.0" mnemonicParsing="false" onAction="#Usuario" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
+      <Button layoutX="253.0" layoutY="148.0" mnemonicParsing="false" onAction="#ActualizarDatos" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="Verdana Italic" size="13.0" />
          </font></Button>
-      <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button fx:id="botonAgregarEjercicio" layoutX="87.0" layoutY="305.0" mnemonicParsing="false" onAction="#abrirAgregarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -147,7 +163,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="256.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button layoutX="256.0" layoutY="305.0" mnemonicParsing="false" onAction="#abrirEliminarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -155,12 +171,20 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ejercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="usuario" layoutX="83.0" layoutY="148.0" mnemonicParsing="false" onAction="#Perfil" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Verdana Italic" size="13.0" />
          </font>
       </Button>
    </children>

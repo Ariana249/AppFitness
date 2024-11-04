@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="550.0" style="-fx-background-color: #2a2f2b;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="src.EjercicioController">
+<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="550.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.AgregarEjercicioController">
    <children>
       <Label alignment="CENTER" layoutX="153.0" layoutY="26.0" prefHeight="41.0" prefWidth="243.0" text="Agregar Ejercicio" textFill="#4e9564">
          <font>
@@ -31,14 +30,15 @@
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <ComboBox layoutX="261.0" layoutY="167.0" prefHeight="26.0" prefWidth="166.0" />
+      <ComboBox fx:id="tipo" layoutX="261.0" layoutY="167.0" prefHeight="26.0" prefWidth="166.0" promptText="Tipo" />
       <Label alignment="CENTER" layoutX="80.0" layoutY="258.0" prefHeight="24.0" prefWidth="165.0" text="Repeticiones" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <ComboBox layoutX="261.0" layoutY="214.0" prefHeight="26.0" prefWidth="75.0" />
-      <ComboBox layoutX="261.0" layoutY="257.0" prefHeight="26.0" prefWidth="75.0" />
-      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#Agregar" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
+      <ComboBox fx:id="series" layoutX="261.0" layoutY="214.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
+      <ComboBox fx:id="repeticiones" layoutX="261.0" layoutY="257.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
+      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
+      <Button fx:id="volver" layoutX="41.0" layoutY="386.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
    </children>
 </AnchorPane>
