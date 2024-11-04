@@ -130,8 +130,8 @@ public class LoginController implements Initializable {
                 Stage stage = (Stage)this.botonCrearCuenta.getScene().getWindow();
                 stage.close();
                 
-                App login = new App();
-                login.start(stage);
+                BienvenidaController bc = new BienvenidaController();
+                bc.iniciarescenaBienvenida();
                 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());

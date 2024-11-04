@@ -23,5 +23,19 @@ public class App extends Application {
     public static void main(String[] args){
         launch(args);
     } 
-    
+    public void AbrirEscena(String archivo ) {
+        
+    try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(archivo));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+            Stage s = new Stage();
+            s.setScene(scene);
+            s.setTitle("APP FITNESS");
+            s.show();
+        } catch (Exception e) {
+        }
+}
 }
