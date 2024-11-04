@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import src.ConeccionDB;
 
-public class Rutina implements CrearRutina {
+public class Rutina {
     //Atributos
     private int cantDias;
     private String objetivo;
@@ -15,10 +15,13 @@ public class Rutina implements CrearRutina {
     
     //Constructor
 
-    public Rutina(int cantDias, String objetivo) {
+    public Rutina(int cantDias, String objetivo, Pesas pesas, Calistenia calistenia) {
         this.cantDias = cantDias;
         this.objetivo = objetivo;
+        this.pesas = pesas;
+        this.calistenia = calistenia;
     }
+    
     
     //Getters & Setters
 
@@ -48,39 +51,6 @@ public class Rutina implements CrearRutina {
     
     Connection conn = ConeccionDB.connect();
 
-    @Override
-    public void agregarEjercicio(String nombre, int repeticiones, int series, String tipo) {
-        
-        try {
-            
-            String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, tipo) VALUES (?,?,?,?)";
-            
-            PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
-            
-            pr.setString(1, nombre);
-            pr.setInt(2, series);
-            pr.setInt(3, repeticiones);
-            pr.setString(4, tipo);
-            
-            pr.executeQuery();
-            
-            pr.close();
-            
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-    }
-
-    @Override
-    public void eliminarEjercicio(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void mostrarRutina() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
     
 }
