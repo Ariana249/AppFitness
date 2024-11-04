@@ -131,7 +131,7 @@
          <font>
             <Font name="Verdana Italic" size="13.0" />
          </font></Button>
-      <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" onAction="#AgregarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button layoutX="87.0" layoutY="305.0" mnemonicParsing="false" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
