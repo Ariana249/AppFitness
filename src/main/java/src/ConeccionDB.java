@@ -20,4 +20,10 @@ public class ConeccionDB {
         }
         return conn;
     }
+    
+    public static int idUsuario(){
+        String query = "SELECT id FROM usuario";
+        int id = 1;
+        return id;
+    }
 }

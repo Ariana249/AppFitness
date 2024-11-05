@@ -1,6 +1,6 @@
 package src;
 
-import com.mycompany.appfitness.Calistenia;
+import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,7 +51,7 @@ public class AgregarEjercicioController implements Initializable {
     }
     
     public void GuardarEjercicio(ActionEvent event){
-        Calistenia c;
+        Ejercicio c;
         
         String nombreEj = this.nombreIngresado.getText();
         String tipoEj = this.tipo.getValue().toString();
@@ -65,7 +65,7 @@ public class AgregarEjercicioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe elegir el tipo del ejercicio.");
             } else {
                 try {
-                    c = new Calistenia(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps));
+                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps));
                     
                     c.guardar(c);
                     

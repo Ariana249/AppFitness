@@ -12,7 +12,8 @@ public class Usuario implements GEA<Usuario> {
     Connection conn = ConeccionDB.connect();
 
     private int id;
-    private String nombre;
+    private String nombre;    
+    private String apellido;    
     private int edad;
     private float peso;
     private float altura;
@@ -110,14 +111,14 @@ public class Usuario implements GEA<Usuario> {
 
     @Override
     public void actualizar(Integer id, Usuario usr) {
-
-        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ? WHERE id = '" + id + "'";
+        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ? WHERE id = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
             pr.setString(1, usr.getNombre());
             pr.setFloat(2, usr.getPeso());
             pr.setFloat(3, usr.getAltura());
             pr.setString(4, usr.getObjetivo());
+            pr.setInt(5, id);
 
             int affectedRows = pr.executeUpdate();
             if (affectedRows > 0) {
@@ -125,6 +126,8 @@ public class Usuario implements GEA<Usuario> {
             } else {
                 System.out.println("No se pudo actualizar los datos.");
             }
+            pr.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println("Error al actualizar datos: " + e.getMessage());
         }
@@ -140,7 +143,8 @@ public class Usuario implements GEA<Usuario> {
             if (rs.next()) {
                 usr = new Usuario(rs.getInt("id"), rs.getString("nombre"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
             }
-
+            pr.close();
+            conn.close();
         } catch (SQLException e) {
             System.err.println("Error al buscar el usuario: " + e.getMessage());
         }

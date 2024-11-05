@@ -25,6 +25,8 @@ public class BienvenidaController implements Initializable {
     @FXML
     private TextField nombreIngresado;
     @FXML
+    private TextField apellidoIngresado;
+    @FXML
     private TextField alturaIngresada;
     @FXML
     private TextField pesoIngresado;
@@ -40,46 +42,41 @@ public class BienvenidaController implements Initializable {
     @FXML
     public void Continuar(ActionEvent event) {
         String nombre = this.nombreIngresado.getText();
+        String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
         String opcion = this.objetivo.getValue().toString();
 
-        if (nombre.isEmpty() || altura.isEmpty() || peso.isEmpty()) {
+        if (nombre.isEmpty() || apellido.isEmpty() || altura.isEmpty() || peso.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe Ingresar los Datos para continuar.");
         } else {
             if (opcion.equalsIgnoreCase("Objetivo")) {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
                 try {
-                    String sql = "INSERT INTO usuario (nombre, peso, altura, objetivo) VALUES (?, ?, ?, ?)";
+                    String sql = "INSERT INTO usuario (nombre, apellido, peso, altura, objetivo) VALUES (?, ?, ?, ?, ?)";
 
                     PreparedStatement pr = conn.prepareStatement(sql);
                     pr.setString(1, nombre);
-                    pr.setString(2, peso);
-                    pr.setString(3, altura);
-                    pr.setString(4, opcion);
+                    pr.setString(2, apellido);
+                    pr.setString(3, peso);
+                    pr.setString(4, altura);
+                    pr.setString(5, opcion);
 
                     pr.executeUpdate();
                     pr.close();
 
                     Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
                     stage.close();
+                    
+                    App a = new App();
+                    a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
 
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
-        try {
-
-            Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
-            stage.close();
-
-            App a = new App();
-            a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
-
-        } catch (Exception e) {
-        }
     }
-
 }
+

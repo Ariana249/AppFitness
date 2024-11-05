@@ -1,24 +1,17 @@
 package com.mycompany.appfitness;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import src.ConeccionDB;
-
 public class Rutina {
     //Atributos
     private int cantDias;
     private String objetivo;
-    private Pesas pesas;
-    private Calistenia calistenia;
+    private Ejercicio calistenia;
     
     
     //Constructor
 
-    public Rutina(int cantDias, String objetivo, Pesas pesas, Calistenia calistenia) {
+    public Rutina(int cantDias, String objetivo, Ejercicio calistenia) {
         this.cantDias = cantDias;
         this.objetivo = objetivo;
-        this.pesas = pesas;
         this.calistenia = calistenia;
     }
     
@@ -40,17 +33,6 @@ public class Rutina {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
-      
-    public Pesas getPesas() {
-        return pesas;
-    }
-
-    public void setPesas(Pesas pesas) {
-        this.pesas = pesas;
-    }
-    
     
 
-   
-    
 }

@@ -23,11 +23,15 @@ public class UsuarioController implements Initializable {
     @FXML
     private TextField nombreIngresado;
     @FXML
+    private TextField apellidoIngresado;
+    @FXML
     private TextField alturaIngresada;
     @FXML
     private TextField pesoIngresado;
     @FXML
     private Button botonListo;
+    @FXML
+    private Button volver;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,6 +47,7 @@ public class UsuarioController implements Initializable {
         Usuario usr;        
         
         String nombre = this.nombreIngresado.getText();
+        String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
         String opcion = this.objetivo.getValue().toString();
@@ -54,9 +59,10 @@ public class UsuarioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
                 try {
+
                     usr = new Usuario(idUsuario,nombre,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
-//                    busca el usuario y lo actualiza con los datos que le pasamos                    
-                    usr.buscarUsr(nombre);
+                
+                    //busca el usuario y lo actualiza con los datos que le pasamos                                        
                     usr.actualizar(idUsuario,usr);
                     
                     Stage stage = (Stage) this.botonListo.getScene().getWindow();
@@ -68,7 +74,14 @@ public class UsuarioController implements Initializable {
             }
         }
     }
-
     
+    public void Volver(ActionEvent event) {
+        Stage s = (Stage) this.volver.getScene().getWindow();
+        s.close();
 
+        App a = new App();
+        a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+
+    }
+    
 }

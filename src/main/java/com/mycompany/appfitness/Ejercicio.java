@@ -15,15 +15,15 @@ import src.ConeccionDB;
  *
  * @author brook
  */
-public class Calistenia extends ActividadFisica implements GEA<Calistenia>{
+public class Ejercicio extends ActividadFisica implements GEA<Ejercicio>{
     Connection conn = ConeccionDB.connect();
     private String ejercicio;
     private String grupoMuscular;
     
-    public Calistenia() {
+    public Ejercicio() {
     }
 
-    public Calistenia(String ejercicio, String grupoMuscular, int series, int repeticiones) {
+    public Ejercicio(String ejercicio, String grupoMuscular, int series, int repeticiones) {
         super(series, repeticiones);
         this.ejercicio = ejercicio;
         this.grupoMuscular = grupoMuscular;
@@ -46,7 +46,7 @@ public class Calistenia extends ActividadFisica implements GEA<Calistenia>{
     }
 
     @Override
-    public void guardar(Calistenia c) {
+    public void guardar(Ejercicio c) {
         try {
             String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, tipo) VALUES (?, ?, ?, ?)";
             
@@ -59,7 +59,7 @@ public class Calistenia extends ActividadFisica implements GEA<Calistenia>{
             pr.executeUpdate();
             pr.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Calistenia.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Ejercicio.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -69,7 +69,7 @@ public class Calistenia extends ActividadFisica implements GEA<Calistenia>{
     }
 
     @Override
-    public void actualizar(Integer id, Calistenia c) {
+    public void actualizar(Integer id, Ejercicio c) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

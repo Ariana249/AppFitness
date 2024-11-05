@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -39,6 +42,15 @@
       <ComboBox fx:id="series" layoutX="261.0" layoutY="214.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
       <ComboBox fx:id="repeticiones" layoutX="261.0" layoutY="257.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
       <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
-      <Button fx:id="volver" layoutX="41.0" layoutY="386.0" mnemonicParsing="false" onAction="#Volver" text="Volver" />
+      <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/volver.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="volver" layoutX="38.0" layoutY="389.0" mnemonicParsing="false" onAction="#Volver" opacity="0.0" prefHeight="28.0" prefWidth="28.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
