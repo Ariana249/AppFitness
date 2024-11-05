@@ -11,16 +11,15 @@ package com.mycompany.appfitness;
 public abstract class ActividadFisica {
     //Atributos
     private int series;
-    private int repeticiones;
-    private boolean completado;
+    private int repeticiones; 
     
     //Constructor
 
     public ActividadFisica(int series, int repeticiones) {
         this.series = series;
         this.repeticiones = repeticiones;
-        this.completado = false;
-    }
+
+    }    
 
     public ActividadFisica() {
     }
@@ -40,18 +39,6 @@ public abstract class ActividadFisica {
 
     public void setRepeticiones(int repeticiones) {
         this.repeticiones = repeticiones;
-    }
-    
-    //Metodos
-
-    public void inicializarEntrenamiento(){
-        
-    }
-    public void finalizarEntrenamiento(){
-        
-    }
-    public void actFisiscaCompletada(){
-        this.completado = true;
     }
     
     

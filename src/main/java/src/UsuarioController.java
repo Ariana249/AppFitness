@@ -1,10 +1,8 @@
 package src;
 
+import com.mycompany.appfitness.Usuario;
 import opciones.OpcionObjetivo;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -18,7 +16,7 @@ import javax.swing.JOptionPane;
 
 public class UsuarioController implements Initializable {
 
-    Connection conn = ConeccionDB.connect();
+    private int idUsuario;
 
     @FXML
     private ComboBox objetivo;
@@ -41,7 +39,9 @@ public class UsuarioController implements Initializable {
 
     @FXML
     public void Listo(ActionEvent event) {
-
+        
+        Usuario usr;        
+        
         String nombre = this.nombreIngresado.getText();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
@@ -54,8 +54,11 @@ public class UsuarioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
                 try {
-                    actualizarDatosUsuario(nombre, peso, altura, opcion);
-
+                    usr = new Usuario(idUsuario,nombre,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
+//                    busca el usuario y lo actualiza con los datos que le pasamos                    
+                    usr.buscarUsr(nombre);
+                    usr.actualizar(idUsuario,usr);
+                    
                     Stage stage = (Stage) this.botonListo.getScene().getWindow();
                     stage.close();
 
@@ -66,24 +69,6 @@ public class UsuarioController implements Initializable {
         }
     }
 
-    public void actualizarDatosUsuario(String nombre, String peso, String altura, String objetivo) {
-        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ?";
-
-        try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
-            pr.setString(1, nombre);
-            pr.setString(2, peso);
-            pr.setString(3, altura);
-            pr.setString(4, objetivo);
-
-            int affectedRows = pr.executeUpdate();
-            if (affectedRows > 0) {
-                System.out.println("Datos actualizados correctamente.");
-            } else {
-                System.out.println("No se pudo actualizar los datos.");
-            }
-        } catch (SQLException e) {
-            System.err.println("Error al actualizar datos: " + e.getMessage());
-        }
-    }
+    
 
 }

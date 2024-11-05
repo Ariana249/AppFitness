@@ -34,7 +34,7 @@
       </Pane>
       <Pane layoutY="153.0" prefHeight="298.0" prefWidth="450.0" style="-fx-background-color: #2a2f2b;">
          <children>
-            <TextField fx:id="regUsuario" layoutX="139.0" layoutY="53.0" prefHeight="26.0" prefWidth="180.0" promptText="Usuario" />
+            <TextField fx:id="regUsuario" layoutX="139.0" layoutY="53.0" prefHeight="26.0" prefWidth="180.0" promptText="Nombre de usuario" />
             <PasswordField fx:id="regClave" layoutX="139.0" layoutY="92.0" prefHeight="26.0" prefWidth="180.0" promptText="Contraseña" />
             <Label layoutX="53.0" layoutY="54.0" prefHeight="24.0" prefWidth="63.0" text="Usuario" textFill="WHITE">
                <font>

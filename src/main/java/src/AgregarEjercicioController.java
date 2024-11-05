@@ -1,5 +1,6 @@
 package src;
 
+import com.mycompany.appfitness.Calistenia;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,8 +17,6 @@ import javax.swing.JOptionPane;
 import opciones.PartesCuerpo;
 
 public class AgregarEjercicioController implements Initializable {
-    
-    Connection conn = ConeccionDB.connect();
 
     @FXML
     private ComboBox tipo;
@@ -52,10 +51,12 @@ public class AgregarEjercicioController implements Initializable {
     }
     
     public void GuardarEjercicio(ActionEvent event){
+        Calistenia c;
+        
         String nombreEj = this.nombreIngresado.getText();
         String tipoEj = this.tipo.getValue().toString();
         String ser = this.series.getValue().toString();
-        String reps = this.repeticiones.getValue().toString();
+        String reps = this.repeticiones.getValue().toString();                
         
         if (nombreEj.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del ejercicio.");
@@ -64,16 +65,9 @@ public class AgregarEjercicioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe elegir el tipo del ejercicio.");
             } else {
                 try {
-                    String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, tipo) VALUES (?, ?, ?, ?)";
+                    c = new Calistenia(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps));
                     
-                    PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
-                    pr.setString(1, nombreEj);
-                    pr.setString(2, ser);
-                    pr.setString(3, reps);
-                    pr.setString(4, tipoEj);
-                    
-                    pr.executeUpdate();
-                    pr.close();
+                    c.guardar(c);
                     
                     JOptionPane.showMessageDialog(null, "Ejercicio Agregado Correctamente!");
                     

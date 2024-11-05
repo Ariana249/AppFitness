@@ -8,18 +8,18 @@ package com.mycompany.appfitness;
  *
  * @author martin
  */
-public class Pesas extends Calistenia {
+public class Pesas extends Calistenia{
     private String tipoPesas;
     private Float peso;    
 
     public Pesas() {
     }
 
-    public Pesas(String tipoPesas, Float peso, String ejercicio, String grupoMuscular, int series, int repeticiones, float caloriasAQuemar) {
-        super(ejercicio, grupoMuscular, series, repeticiones, caloriasAQuemar);
+    public Pesas(String tipoPesas, Float peso, String ejercicio, String grupoMuscular, int series, int repeticiones) {
+        super(ejercicio, grupoMuscular, series, repeticiones);
         this.tipoPesas = tipoPesas;
         this.peso = peso;
-    }        
+    }           
     
     public String getTipoPesas() {
         return tipoPesas;
@@ -36,6 +36,18 @@ public class Pesas extends Calistenia {
     public void setPeso(Float peso) {
         this.peso = peso;
     }
+
+
+    @Override
+    public void eliminar(Integer id) {
+        super.eliminar(id); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+    
+    public void guardarPesas(Pesas p){
+        
+    }
+    
+    
 
     
 

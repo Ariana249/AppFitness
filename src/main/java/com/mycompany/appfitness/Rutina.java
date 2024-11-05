@@ -49,7 +49,7 @@ public class Rutina {
         this.pesas = pesas;
     }
     
-    Connection conn = ConeccionDB.connect();
+    
 
    
     
