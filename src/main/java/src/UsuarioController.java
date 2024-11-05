@@ -60,13 +60,12 @@ public class UsuarioController implements Initializable {
             } else {
                 try {
 
-                    usr = new Usuario(nombre,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
+                    usr = new Usuario(nombre,apellido,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
                 
                     //busca el usuario y lo actualiza con los datos que le pasamos                                        
                     usr.actualizar(idLogin,usr);
                     
-                    Stage stage = (Stage) this.botonListo.getScene().getWindow();
-                    stage.close();
+                    JOptionPane.showMessageDialog(null, "Tus datos han sido actualizados");
 
                 } catch (Exception e) {
                     e.printStackTrace();

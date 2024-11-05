@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import src.ConeccionDB;
 
 public class Usuario implements GEA<Usuario> {
@@ -12,23 +14,33 @@ public class Usuario implements GEA<Usuario> {
     Connection conn = ConeccionDB.connect();
 
     private int id;
-    private String nombre;    
-    private String apellido;    
+    private String nombre;
+    private String apellido;
     private int edad;
     private float peso;
     private float altura;
     private float imc;
     private String objetivo;
+    private int idLogin;
 
     //Constructor
     public Usuario() {
     }
 
-    public Usuario(String nombre, float peso, float altura, String objetivo) {
+    public Usuario(String nombre, String apellido, float peso, float altura, String objetivo, int idLogin) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.peso = peso;
         this.altura = altura;
-        this.imc = imc;
+        this.objetivo = objetivo;
+        this.idLogin = idLogin;
+    }
+
+    public Usuario(String nombre, String apellido, float peso, float altura, String objetivo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.peso = peso;
+        this.altura = altura;
         this.objetivo = objetivo;
     }
 
@@ -47,6 +59,14 @@ public class Usuario implements GEA<Usuario> {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getEdad() {
@@ -89,6 +109,14 @@ public class Usuario implements GEA<Usuario> {
         this.objetivo = objetivo;
     }
 
+    public int getIdLogin() {
+        return idLogin;
+    }
+
+    public void setIdLogin(int idLogin) {
+        this.idLogin = idLogin;
+    }
+
     //Metodos    
     public void cambiarObjetivos() {
 
@@ -100,6 +128,23 @@ public class Usuario implements GEA<Usuario> {
 
     @Override
     public void guardar(Usuario usr) {
+        String sql = "INSERT INTO usuario (nombre, apellido, peso, altura, objetivo,id_login) VALUES (?, ?, ?, ?, ?,?)";
+
+        PreparedStatement pr;
+        try {
+            pr = conn.prepareStatement(sql);
+            pr.setString(1, usr.getNombre());
+            pr.setString(2, usr.getApellido());
+            pr.setFloat(3, usr.getPeso());
+            pr.setFloat(4, usr.getAltura());
+            pr.setString(5, usr.getObjetivo());
+            pr.setInt(6, usr.getIdLogin());
+
+            pr.executeUpdate();
+            pr.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -110,14 +155,15 @@ public class Usuario implements GEA<Usuario> {
 
     @Override
     public void actualizar(Integer id, Usuario usr) {
-        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ? WHERE id_login = ?";
+        String updateQuery = "UPDATE usuario SET nombre = ?, apellido = ?, peso = ?, altura = ?, objetivo = ? WHERE id_login = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
             pr.setString(1, usr.getNombre());
-            pr.setFloat(2, usr.getPeso());
-            pr.setFloat(3, usr.getAltura());
-            pr.setString(4, usr.getObjetivo());
-            pr.setInt(5, id);
+            pr.setString(2, usr.getApellido());
+            pr.setFloat(3, usr.getPeso());
+            pr.setFloat(4, usr.getAltura());
+            pr.setString(5, usr.getObjetivo());
+            pr.setInt(6, id);
 
             int affectedRows = pr.executeUpdate();
             if (affectedRows > 0) {
@@ -125,8 +171,8 @@ public class Usuario implements GEA<Usuario> {
             } else {
                 System.out.println("No se pudo actualizar los datos.");
             }
+
             pr.close();
-            conn.close();
         } catch (SQLException e) {
             System.err.println("Error al actualizar datos: " + e.getMessage());
         }
@@ -140,10 +186,9 @@ public class Usuario implements GEA<Usuario> {
             pr.setString(1, nombreUsuario);
             ResultSet rs = pr.executeQuery();
             if (rs.next()) {
-                usr = new Usuario(rs.getString("nombre"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
+                usr = new Usuario(rs.getString("nombre"), rs.getString("apellido"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
             }
             pr.close();
-            conn.close();
         } catch (SQLException e) {
             System.err.println("Error al buscar el usuario: " + e.getMessage());
         }

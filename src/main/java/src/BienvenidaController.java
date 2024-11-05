@@ -1,5 +1,6 @@
 package src;
 
+import com.mycompany.appfitness.Usuario;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +20,7 @@ import opciones.OpcionObjetivo;
 public class BienvenidaController implements Initializable {
 
     Connection conn = ConeccionDB.connect();
+    private int idLogin = LoginModel.idLogin;
 
     @FXML
     private ComboBox objetivo;
@@ -41,6 +43,8 @@ public class BienvenidaController implements Initializable {
 
     @FXML
     public void Continuar(ActionEvent event) {
+        Usuario usr;
+        
         String nombre = this.nombreIngresado.getText();
         String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
@@ -53,30 +57,18 @@ public class BienvenidaController implements Initializable {
             if (opcion.equalsIgnoreCase("Objetivo")) {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
-                try {
-                    String sql = "INSERT INTO usuario (nombre, apellido, peso, altura, objetivo) VALUES (?, ?, ?, ?, ?)";
+                
+                usr = new Usuario(nombre,apellido,Float.parseFloat(peso),Float.parseFloat(altura),opcion,idLogin);
+                
+                usr.guardar(usr);
+                
+                Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
+                stage.close();
 
-                    PreparedStatement pr = conn.prepareStatement(sql);
-                    pr.setString(1, nombre);
-                    pr.setString(2, apellido);
-                    pr.setString(3, peso);
-                    pr.setString(4, altura);
-                    pr.setString(5, opcion);
+                App a = new App();
+                a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
 
-                    pr.executeUpdate();
-                    pr.close();
-
-                    Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
-                    stage.close();
-                    
-                    App a = new App();
-                    a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
-
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
 }
-

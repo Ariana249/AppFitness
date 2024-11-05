@@ -88,6 +88,7 @@ public class LoginController implements Initializable {
 
     @FXML
     public void CrearCuenta(ActionEvent evento) {
+        LoginModel model = new LoginModel();
         Usuario user = new Usuario();
         String usuario = this.regUsuario.getText();
         String clave = this.regClave.getText();
@@ -103,7 +104,7 @@ public class LoginController implements Initializable {
                 pr.setString(1, usuario);
                 pr.setString(2, clave);
                 pr.setString(3, email);
-
+                
                 // Ejecuta la inserción
                 int filasAfectadas = pr.executeUpdate();
                 if (filasAfectadas > 0) {
@@ -111,7 +112,8 @@ public class LoginController implements Initializable {
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al crear la cuenta.");
                 }
-
+                
+                model.idLogin(usuario);
                 // Cierra el PreparedStatement
                 pr.close();
 
