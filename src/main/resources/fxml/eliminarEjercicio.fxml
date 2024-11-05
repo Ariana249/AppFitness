@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <CheckBox layoutX="208.0" layoutY="174.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="195.0" text="Estoy seguro de eliminarlo" textFill="WHITE" />
+      <Button accessibleHelp="volver" layoutX="510.0" layoutY="345.0" mnemonicParsing="false" text="Volver" />
+      <Button layoutX="239.0" layoutY="261.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="132.0" style="-fx-background-color: #4e9564;" text="Eliminar" />
+      <Label layoutX="50.0" layoutY="63.0" prefHeight="29.0" prefWidth="378.0" text="Indique el ejercicio que quiere eliminar" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="217.0" layoutY="125.0" prefHeight="26.0" prefWidth="166.0" promptText="Ejercicios" />
+   </children>
+</Pane>

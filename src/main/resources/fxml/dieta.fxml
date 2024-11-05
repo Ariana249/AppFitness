@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="24.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
+      <Pane layoutX="41.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
+      <Pane layoutX="59.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
+      <ImageView fitHeight="45.0" fitWidth="43.0" layoutX="543.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/volver.png" />
+         </image>
+      </ImageView>
+      <ComboBox layoutX="84.0" layoutY="157.0" prefHeight="25.0" prefWidth="132.0" promptText="Desayuno" />
+      <ComboBox layoutX="263.0" layoutY="157.0" prefHeight="25.0" prefWidth="141.0" promptText="Almuerzo" />
+      <ComboBox layoutX="438.0" layoutY="157.0" prefHeight="25.0" prefWidth="141.0" promptText="Cena" />
+      <Label layoutX="124.0" layoutY="49.0" prefHeight="29.0" prefWidth="254.0" text="Elija su alimentación para:" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="167.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="528.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="348.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+      </ImageView>
+      <Button accessibleHelp="mas desayuno" layoutX="163.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button accessibleHelp="mas cena" layoutX="524.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button accessibleHelp="mas almuerzo" layoutX="344.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button accessibleHelp="volver" layoutX="539.0" layoutY="340.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button layoutX="228.0" layoutY="285.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="168.0" style="-fx-background-color: #4e9564;" text="Guardar">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
