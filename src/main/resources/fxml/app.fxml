@@ -140,7 +140,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </BorderPane>
-      <Button layoutX="253.0" layoutY="148.0" mnemonicParsing="false" onAction="#ActualizarDatos" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
+      <Button fx:id="botonActualizarDatos" layoutX="253.0" layoutY="148.0" mnemonicParsing="false" onAction="#ActualizarDatos" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -155,7 +155,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="84.0" layoutY="451.0" mnemonicParsing="false" onAction="#Dieta" opacity="0.27" prefHeight="106.0" prefWidth="157.0">
+      <Button fx:id="botonCrearDieta" layoutX="84.0" layoutY="451.0" mnemonicParsing="false" onAction="#CrearDieta" opacity="0.27" prefHeight="106.0" prefWidth="157.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -163,7 +163,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="256.0" layoutY="305.0" mnemonicParsing="false" onAction="#abrirEliminarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
+      <Button fx:id="botonEliminarEjercicio" layoutX="256.0" layoutY="305.0" mnemonicParsing="false" onAction="#abrirEliminarEjercicio" opacity="0.27" prefHeight="105.0" prefWidth="151.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -179,7 +179,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="usuario" layoutX="83.0" layoutY="148.0" mnemonicParsing="false" onAction="#Perfil" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
+      <Button fx:id="botonPerfil" layoutX="83.0" layoutY="148.0" mnemonicParsing="false" onAction="#Perfil" opacity="0.18" prefHeight="106.0" prefWidth="157.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

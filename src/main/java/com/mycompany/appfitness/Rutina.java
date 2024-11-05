@@ -1,10 +1,5 @@
 package com.mycompany.appfitness;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import src.ConeccionDB;
-
 public class Rutina {
     //Atributos
     private int cantDias;
@@ -49,8 +44,5 @@ public class Rutina {
         this.pesas = pesas;
     }
     
-    Connection conn = ConeccionDB.connect();
-
-   
     
 }

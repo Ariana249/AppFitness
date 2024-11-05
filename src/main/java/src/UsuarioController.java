@@ -25,11 +25,15 @@ public class UsuarioController implements Initializable {
     @FXML
     private TextField nombreIngresado;
     @FXML
+    private TextField apellidoIngresado;
+    @FXML
     private TextField alturaIngresada;
     @FXML
     private TextField pesoIngresado;
     @FXML
     private Button botonListo;
+    @FXML
+    private Button volver;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,6 +47,7 @@ public class UsuarioController implements Initializable {
     public void Listo(ActionEvent event) {
 
         String nombre = this.nombreIngresado.getText();
+        String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
         String opcion = this.objetivo.getValue().toString();
@@ -54,7 +59,7 @@ public class UsuarioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
                 try {
-                    actualizarDatosUsuario(nombre, peso, altura, opcion);
+                    actualizarDatosUsuario(nombre, apellido, peso, altura, opcion);
 
                     Stage stage = (Stage) this.botonListo.getScene().getWindow();
                     stage.close();
@@ -66,14 +71,15 @@ public class UsuarioController implements Initializable {
         }
     }
 
-    public void actualizarDatosUsuario(String nombre, String peso, String altura, String objetivo) {
-        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ?";
+    public void actualizarDatosUsuario(String nombre, String apellido, String peso, String altura, String objetivo) {
+        String updateQuery = "UPDATE usuario SET nombre = ?, apellido = ?, peso = ?, altura = ?, objetivo = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
             pr.setString(1, nombre);
             pr.setString(2, peso);
-            pr.setString(3, altura);
-            pr.setString(4, objetivo);
+            pr.setString(3, peso);
+            pr.setString(4, altura);
+            pr.setString(5, objetivo);
 
             int affectedRows = pr.executeUpdate();
             if (affectedRows > 0) {
@@ -85,5 +91,14 @@ public class UsuarioController implements Initializable {
             System.err.println("Error al actualizar datos: " + e.getMessage());
         }
     }
+    
+    public void Volver(ActionEvent event) {
+        Stage s = (Stage) this.volver.getScene().getWindow();
+        s.close();
 
+        App a = new App();
+        a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+
+    }
+    
 }

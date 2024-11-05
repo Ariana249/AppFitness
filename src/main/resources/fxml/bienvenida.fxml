@@ -18,38 +18,38 @@
                </font>
             </Label>
             <Label fx:id="dbstatus" layoutX="558.0" layoutY="46.0" prefHeight="17.0" prefWidth="108.0" />
-            <Label alignment="CENTER" layoutX="156.0" layoutY="184.0" prefHeight="24.0" prefWidth="81.0" text="Nombre" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="184.0" prefHeight="24.0" prefWidth="81.0" text="Nombre*" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="156.0" layoutY="277.0" prefHeight="24.0" prefWidth="81.0" text="Peso" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="320.0" prefHeight="24.0" prefWidth="81.0" text="Peso*" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="156.0" layoutY="229.0" prefHeight="24.0" prefWidth="81.0" text="Altura" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="156.0" layoutY="272.0" prefHeight="24.0" prefWidth="81.0" text="Altura*" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
             <TextField fx:id="nombreIngresado" layoutX="264.0" layoutY="183.0" prefHeight="26.0" prefWidth="180.0" promptText="Nombre" />
-            <TextField fx:id="alturaIngresada" layoutX="264.0" layoutY="228.0" prefHeight="26.0" prefWidth="81.0" promptText="Altura" />
-            <TextField fx:id="pesoIngresado" layoutX="264.0" layoutY="276.0" prefHeight="26.0" prefWidth="81.0" promptText="Peso" />
-            <ComboBox fx:id="objetivo" layoutX="264.0" layoutY="321.0" prefHeight="26.0" prefWidth="180.0" promptText="Objetivo" />
-            <Label alignment="CENTER" layoutX="156.0" layoutY="322.0" prefHeight="24.0" prefWidth="81.0" text="Objetivo" textFill="WHITE">
+            <TextField fx:id="alturaIngresada" layoutX="264.0" layoutY="271.0" prefHeight="26.0" prefWidth="81.0" promptText="Altura" />
+            <TextField fx:id="pesoIngresado" layoutX="264.0" layoutY="319.0" prefHeight="26.0" prefWidth="81.0" promptText="Peso" />
+            <ComboBox fx:id="objetivo" layoutX="264.0" layoutY="364.0" prefHeight="26.0" prefWidth="180.0" promptText="Objetivo" />
+            <Label alignment="CENTER" layoutX="156.0" layoutY="365.0" prefHeight="24.0" prefWidth="81.0" text="Objetivo*" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
             <!-- onAction = nuevo metodo que llama a la escena-->
-            <Button fx:id="botonContinuar" layoutX="264.0" layoutY="367.0" mnemonicParsing="false" onAction="#Continuar" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Continuar" />
-            <Label layoutX="354.0" layoutY="229.0" prefHeight="24.0" prefWidth="26.0" text="cm" textFill="WHITE">
+            <Button fx:id="botonContinuar" layoutX="264.0" layoutY="410.0" mnemonicParsing="false" onAction="#Continuar" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Continuar" />
+            <Label layoutX="354.0" layoutY="272.0" prefHeight="24.0" prefWidth="26.0" text="cm" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="354.0" layoutY="277.0" prefHeight="24.0" prefWidth="26.0" text="kg" textFill="WHITE">
+            <Label layoutX="354.0" layoutY="320.0" prefHeight="24.0" prefWidth="26.0" text="kg" textFill="WHITE">
                <font>
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
@@ -59,6 +59,12 @@
                   <Font name="Malgun Gothic" size="16.0" />
                </font>
             </Label>
+            <Label alignment="CENTER" layoutX="156.0" layoutY="228.0" prefHeight="24.0" prefWidth="81.0" text="Apellido*" textFill="WHITE">
+               <font>
+                  <Font name="Malgun Gothic" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="apellidoIngresado" layoutX="264.0" layoutY="227.0" prefHeight="26.0" prefWidth="180.0" promptText="Apellido" />
          </children>
       </Pane>
    </children>

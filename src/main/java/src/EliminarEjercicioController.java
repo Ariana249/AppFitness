@@ -8,16 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class PerfilController implements Initializable {
+public class EliminarEjercicioController implements Initializable {
 
     @FXML
     private Button volver;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
+    }    
+    
     public void Volver(ActionEvent event) {
         Stage s = (Stage) this.volver.getScene().getWindow();
         s.close();
@@ -26,5 +26,4 @@ public class PerfilController implements Initializable {
         a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
 
     }
-
 }

@@ -16,7 +16,14 @@ public class AppController implements Initializable {
     @FXML
     private Button botonAgregarEjercicio;
     @FXML
-    private Button usuario;
+    private Button botonPerfil;
+    @FXML
+    private Button botonCrearDieta;
+    @FXML
+    private Button botonActualizarDatos;
+    @FXML
+    private Button botonEliminarEjercicio;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -25,7 +32,7 @@ public class AppController implements Initializable {
     
     @FXML
     public void Perfil(ActionEvent event){
-        Stage s = (Stage)this.usuario.getScene().getWindow();
+        Stage s = (Stage)this.botonPerfil.getScene().getWindow();
         s.close();
         
         App a = new App();
@@ -34,12 +41,17 @@ public class AppController implements Initializable {
     
     @FXML
     public void ActualizarDatos(ActionEvent event) {
+        Stage s = (Stage)this.botonActualizarDatos.getScene().getWindow();
+        s.close();
         App a = new App();
         a.AbrirEscena("/fxml/actualizarDatos.fxml", "FITCOMPILER");
     }
     
     @FXML
-    public void Dieta(ActionEvent event) {
+    public void CrearDieta(ActionEvent event) {
+        Stage s = (Stage)this.botonCrearDieta.getScene().getWindow();
+        s.close();
+        
         App a = new App();
         a.AbrirEscena("/fxml/dieta.fxml", "FITCOMPILER");
     }
@@ -53,6 +65,9 @@ public class AppController implements Initializable {
     }
     @FXML
     public void abrirEliminarEjercicio(ActionEvent event) {
+        Stage s = (Stage)this.botonEliminarEjercicio.getScene().getWindow();
+        s.close();
+        
         App a = new App();
         a.AbrirEscena("/fxml/eliminarEjercicio.fxml", "FITCOMPILER");
     }
