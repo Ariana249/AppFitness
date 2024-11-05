@@ -24,8 +24,7 @@ public class Usuario implements GEA<Usuario> {
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, float peso, float altura, String objetivo) {
-        this.id = id;
+    public Usuario(String nombre, float peso, float altura, String objetivo) {
         this.nombre = nombre;
         this.peso = peso;
         this.altura = altura;
@@ -111,7 +110,7 @@ public class Usuario implements GEA<Usuario> {
 
     @Override
     public void actualizar(Integer id, Usuario usr) {
-        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ? WHERE id = ?";
+        String updateQuery = "UPDATE usuario SET nombre = ?, peso = ?, altura = ?, objetivo = ? WHERE id_login = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
             pr.setString(1, usr.getNombre());
@@ -141,7 +140,7 @@ public class Usuario implements GEA<Usuario> {
             pr.setString(1, nombreUsuario);
             ResultSet rs = pr.executeQuery();
             if (rs.next()) {
-                usr = new Usuario(rs.getInt("id"), rs.getString("nombre"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
+                usr = new Usuario(rs.getString("nombre"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
             }
             pr.close();
             conn.close();

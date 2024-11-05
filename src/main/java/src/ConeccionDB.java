@@ -2,12 +2,16 @@ package src;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConeccionDB {
     
     //Iniciamos la coneccion con nuestra base de datos que es un archivo .sqlite que esta en nuestra carpeta src del proyecto
-    private static final String DB_URL = "jdbc:sqlite:src/appsystem.sqlite";
+    private static final String DB_URL = "jdbc:sqlite:src/appsystem.sqlite";        
     
     //Creamos el metodo por el cual conectarla
     public static Connection connect() {
@@ -21,9 +25,5 @@ public class ConeccionDB {
         return conn;
     }
     
-    public static int idUsuario(){
-        String query = "SELECT id FROM usuario";
-        int id = 1;
-        return id;
-    }
+    
 }

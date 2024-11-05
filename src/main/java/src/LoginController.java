@@ -1,11 +1,13 @@
 package src;
 
 import com.mycompany.appfitness.Usuario;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -119,6 +121,8 @@ public class LoginController implements Initializable {
                 App a = new App();
                 a.AbrirEscena("/fxml/bienvenida.fxml", "Fitness App");
 
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error: Ese nombre de usuario ya existe");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
             }

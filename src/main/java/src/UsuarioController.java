@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 public class UsuarioController implements Initializable {
 
-    private int idUsuario;
+    private int idLogin = LoginModel.idLogin;
 
     @FXML
     private ComboBox objetivo;
@@ -60,10 +60,10 @@ public class UsuarioController implements Initializable {
             } else {
                 try {
 
-                    usr = new Usuario(idUsuario,nombre,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
+                    usr = new Usuario(nombre,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
                 
                     //busca el usuario y lo actualiza con los datos que le pasamos                                        
-                    usr.actualizar(idUsuario,usr);
+                    usr.actualizar(idLogin,usr);
                     
                     Stage stage = (Stage) this.botonListo.getScene().getWindow();
                     stage.close();
