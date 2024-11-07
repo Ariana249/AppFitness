@@ -3,7 +3,6 @@ package src;
 import com.mycompany.appfitness.Usuario;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

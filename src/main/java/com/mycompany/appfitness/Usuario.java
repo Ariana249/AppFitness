@@ -178,12 +178,12 @@ public class Usuario implements GEA<Usuario> {
         }
     }
 
-    public Usuario buscarUsr(String nombreUsuario) {
-        String readQuery = "SELECT * FROM usuario WHERE nombre = ?";
+    public Usuario buscarUsr(int id) {
+        String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
         Usuario usr = null;
 
         try (PreparedStatement pr = conn.prepareStatement(readQuery)) {
-            pr.setString(1, nombreUsuario);
+            pr.setInt(1, id);
             ResultSet rs = pr.executeQuery();
             if (rs.next()) {
                 usr = new Usuario(rs.getString("nombre"), rs.getString("apellido"), rs.getFloat("peso"), rs.getFloat("altura"), rs.getString("objetivo"));
