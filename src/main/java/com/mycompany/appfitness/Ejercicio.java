@@ -15,27 +15,42 @@ import src.ConeccionDB;
  *
  * @author brook
  */
-public class Ejercicio extends ActividadFisica implements GEA<Ejercicio>{
+public class Ejercicio extends Rutina implements GEA<Ejercicio>{
     Connection conn = ConeccionDB.connect();
-    private String ejercicio;
     private String grupoMuscular;
-    
+    private int repeticiones;
+    private int series;
+
+    // Constructor
+
     public Ejercicio() {
     }
 
-    public Ejercicio(String ejercicio, String grupoMuscular, int series, int repeticiones) {
-        super(series, repeticiones);
-        this.ejercicio = ejercicio;
+    public Ejercicio(String nombre, String grupoMuscular, int repeticiones, int series, String objetivo, int frecuencia, String nivelDeDificultad ) {
+        super(objetivo, frecuencia, nivelDeDificultad, nombre);
         this.grupoMuscular = grupoMuscular;
-    }       
+        this.repeticiones = repeticiones;
+        this.series = series;
+    }
+    
+    
+    // Atributos
 
-    public String getEjercicio() {
-        return ejercicio;
+    public int getRepeticiones() {
+        return repeticiones;
     }
 
-    public void setEjercicio(String ejercicio) {
-        this.ejercicio = ejercicio;
+    public void setRepeticiones(int repeticiones) {
+        this.repeticiones = repeticiones;
     }
+
+    public int getSeries() {
+        return series;
+    }
+
+    public void setSeries(int series) {
+        this.series = series;
+    }    
 
     public String getGrupoMuscular() {
         return grupoMuscular;
@@ -51,7 +66,7 @@ public class Ejercicio extends ActividadFisica implements GEA<Ejercicio>{
             String sql = "INSERT INTO rutina (nombreEjercicio, series, repeticiones, tipo) VALUES (?, ?, ?, ?)";
             
             PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
-            pr.setString(1, c.getEjercicio());
+            pr.setString(1, c.getNombre());
             pr.setInt(2, c.getSeries());
             pr.setInt(3, c.getRepeticiones());
             pr.setString(4, c.getGrupoMuscular());

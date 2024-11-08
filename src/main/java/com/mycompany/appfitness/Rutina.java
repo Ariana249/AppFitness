@@ -1,30 +1,26 @@
 package com.mycompany.appfitness;
 
-public class Rutina {
+public class Rutina extends ActividadFisica{
+
     //Atributos
-    private int cantDias;
-    private String objetivo;
-    private Ejercicio calistenia;
-    
+    private String objetivo; //fuerza o volumen
+    private int frecuencia; //veces por semana
     
     //Constructor
 
-    public Rutina(int cantDias, String objetivo, Ejercicio calistenia) {
-        this.cantDias = cantDias;
+    
+    public Rutina() {
+    }
+  
+    
+    public Rutina(String objetivo, int frecuencia, String nivelDeDificultad, String nombre) {
+        super(nivelDeDificultad, nombre);
         this.objetivo = objetivo;
-        this.calistenia = calistenia;
-    }
-    
-    
-    //Getters & Setters
-
-    public int getCantDias() {
-        return cantDias;
+        this.frecuencia = frecuencia;
     }
 
-    public void setCantDias(int cantDias) {
-        this.cantDias = cantDias;
-    }
+    
+    //Getters & Setters 
 
     public String getObjetivo() {
         return objetivo;
@@ -33,6 +29,15 @@ public class Rutina {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
+
+    public int getFrecuencia() {
+        return frecuencia;
+    }
+
+    public void setFrecuencia(int frecuencia) {
+        this.frecuencia = frecuencia;
+    }
+
     
 
 }

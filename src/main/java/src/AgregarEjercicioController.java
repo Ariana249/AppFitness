@@ -65,7 +65,7 @@ public class AgregarEjercicioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe elegir el tipo del ejercicio.");
             } else {
                 try {
-                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps));
+                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps),"fuerza",2,"hola");
                     
                     c.guardar(c);
                     

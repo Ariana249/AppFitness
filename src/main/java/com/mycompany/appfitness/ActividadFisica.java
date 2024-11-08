@@ -9,37 +9,41 @@ package com.mycompany.appfitness;
  * @author martin
  */
 public abstract class ActividadFisica {
-    //Atributos
-    private int series;
-    private int repeticiones; 
+        //Atributos
+    private String nivelDeDificultad; //principiante, intermedio, avanzado
+    private String nombre;
+    
     
     //Constructor
 
-    public ActividadFisica(int series, int repeticiones) {
-        this.series = series;
-        this.repeticiones = repeticiones;
-
-    }    
-
     public ActividadFisica() {
     }
+
+    public ActividadFisica(String nivelDeDificultad, String nombre) {
+        this.nivelDeDificultad = nivelDeDificultad;
+        this.nombre = nombre;
+    }    
     
-    //Getters & Setters 
-    public int getSeries() {
-        return series;
+    
+    //Getters & Setters
+
+    public String getNivelDeDificultad() {
+        return nivelDeDificultad;
     }
 
-    public void setSeries(int series) {
-        this.series = series;
+    public void setNivelDeDificultad(String nivelDeDificultad) {
+        this.nivelDeDificultad = nivelDeDificultad;
     }
 
-    public int getRepeticiones() {
-        return repeticiones;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRepeticiones(int repeticiones) {
-        this.repeticiones = repeticiones;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    
     
     
 }
