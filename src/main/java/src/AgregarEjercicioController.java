@@ -2,8 +2,6 @@ package src;
 
 import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -18,6 +16,8 @@ import opciones.OpcionObjetivo;
 import opciones.PartesCuerpo;
 
 public class AgregarEjercicioController implements Initializable {
+    
+    private int idLogin = LoginModel.idLogin;
 
     @FXML
     private ComboBox tipo;
@@ -83,7 +83,7 @@ public class AgregarEjercicioController implements Initializable {
             } else {
                 try {
                     //agregar con los nuevos elementos
-                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps),objetivoEj,Integer.parseInt(frecuenciaEJ),dificultadEj);
+                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(reps),Integer.parseInt(ser),objetivoEj,Integer.parseInt(frecuenciaEJ),dificultadEj,idLogin);
                     
                     c.guardar(c);
                     
