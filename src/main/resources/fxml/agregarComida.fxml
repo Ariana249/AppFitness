@@ -22,7 +22,7 @@
          </font>
       </Label>
       <TextField fx:id="nombreIngresado" layoutX="67.0" layoutY="117.0" prefHeight="26.0" prefWidth="387.0" promptText="Nombre" />
-      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
+      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Agregar" />
       <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
