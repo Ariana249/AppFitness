@@ -1,7 +1,7 @@
 package opciones;
 
 public enum PartesCuerpo {
-    Torso, Pierna;
+    Bíceps, Tríceps, Hombros, Espalda, Pecho, Piernas, Glúteos;
     
     private PartesCuerpo(){}
     

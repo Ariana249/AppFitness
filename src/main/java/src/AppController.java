@@ -23,7 +23,8 @@ public class AppController implements Initializable {
     private Button botonActualizarDatos;
     @FXML
     private Button botonEliminarEjercicio;
-    
+    @FXML
+    private Button botonMostrarRutina;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,6 +71,13 @@ public class AppController implements Initializable {
         
         App a = new App();
         a.AbrirEscena("/fxml/eliminarEjercicio.fxml", "FITCOMPILER");
+    }
+    @FXML
+    public void mostrarRutina(ActionEvent event) {
+        Stage s = (Stage)this.botonMostrarRutina.getScene().getWindow();
+        s.close();
+        App a = new App();
+        a.AbrirEscena("/fxml/mostrarRutina.fxml", "FITCOMPILER");
     }
 
     @FXML
