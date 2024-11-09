@@ -9,24 +9,22 @@ package com.mycompany.appfitness;
  * @author martin
  */
 public abstract class ActividadFisica {
-        //Atributos
+    //Atributos
+
+    private int id;
     private String nivelDeDificultad; //principiante, intermedio, avanzado
     private String nombre;
-    
-    
-    //Constructor
 
+    //Constructor
     public ActividadFisica() {
     }
 
     public ActividadFisica(String nivelDeDificultad, String nombre) {
         this.nivelDeDificultad = nivelDeDificultad;
         this.nombre = nombre;
-    }    
-    
-    
-    //Getters & Setters
+    }
 
+    //Getters & Setters
     public String getNivelDeDificultad() {
         return nivelDeDificultad;
     }
@@ -43,7 +41,4 @@ public abstract class ActividadFisica {
         this.nombre = nombre;
     }
 
-    
-    
-    
 }

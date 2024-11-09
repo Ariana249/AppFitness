@@ -14,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import opciones.OpcionObjetivo;
 import opciones.PartesCuerpo;
 
 public class AgregarEjercicioController implements Initializable {
@@ -27,11 +28,18 @@ public class AgregarEjercicioController implements Initializable {
     @FXML
     private TextField nombreIngresado;
     @FXML
+    private ComboBox objetivo;
+    @FXML
+    private TextField frecuencia;
+    @FXML
+    private ComboBox nivelDeDificultad;
+    @FXML
     private Button volver;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         nombreIngresado.setText("");
+        frecuencia.setText("");
         series.setValue(1);
         repeticiones.setValue(1);
         
@@ -39,6 +47,13 @@ public class AgregarEjercicioController implements Initializable {
         this.tipo.setItems(FXCollections.observableArrayList(PartesCuerpo.values()));
         tipo.setValue("Tipo");
 
+        //Inicializa los valores para el ComboBox de objetivo
+        this.objetivo.setItems(FXCollections.observableArrayList(OpcionObjetivo.values()));
+        objetivo.setValue("Objetivo");
+    
+        //agregar a la tabla de browser para el nivel de dificultad
+        
+        
         // Agrega los números al ComboBox de series
         for (int i = 1; i <= 8; i++) {
             series.getItems().add(i);
@@ -54,10 +69,12 @@ public class AgregarEjercicioController implements Initializable {
         Ejercicio c;
         
         String nombreEj = this.nombreIngresado.getText();
+        String frecuenciaEJ = this.frecuencia.getText();
         String tipoEj = this.tipo.getValue().toString();
+        String objetivoEj = this.objetivo.getValue().toString();
         String ser = this.series.getValue().toString();
         String reps = this.repeticiones.getValue().toString();                
-        
+        String dificultadEj = this.nivelDeDificultad.getValue().toString();
         if (nombreEj.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del ejercicio.");
         } else {
@@ -65,7 +82,8 @@ public class AgregarEjercicioController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe elegir el tipo del ejercicio.");
             } else {
                 try {
-                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps),"fuerza",2,"hola");
+                    //agregar con los nuevos elementos
+                    c = new Ejercicio(nombreEj,tipoEj,Integer.parseInt(ser),Integer.parseInt(reps),objetivoEj,Integer.parseInt(frecuenciaEJ),dificultadEj);
                     
                     c.guardar(c);
                     

@@ -17,31 +17,31 @@
             <Font name="Verdana Italic" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="67.0" layoutY="84.0" prefHeight="24.0" prefWidth="165.0" text="Nombre del Ejercicio" textFill="WHITE">
+      <Label layoutX="45.0" layoutY="74.0" prefHeight="24.0" prefWidth="165.0" text="Nombre del Ejercicio" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nombreIngresado" layoutX="67.0" layoutY="117.0" prefHeight="26.0" prefWidth="387.0" promptText="Nombre" />
-      <Label alignment="CENTER" layoutX="80.0" layoutY="168.0" prefHeight="24.0" prefWidth="165.0" text="Parte del Cuerpo" textFill="WHITE">
+      <TextField fx:id="nombreIngresado" layoutX="45.0" layoutY="98.0" prefHeight="26.0" prefWidth="387.0" promptText="Nombre" />
+      <Label alignment="CENTER" layoutX="20.0" layoutY="132.0" prefHeight="24.0" prefWidth="165.0" text="Parte del Cuerpo" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="80.0" layoutY="215.0" prefHeight="24.0" prefWidth="165.0" text="Series" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="20.0" layoutY="166.0" prefHeight="24.0" prefWidth="165.0" text="Series" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <ComboBox fx:id="tipo" layoutX="261.0" layoutY="167.0" prefHeight="26.0" prefWidth="166.0" promptText="Tipo" />
-      <Label alignment="CENTER" layoutX="80.0" layoutY="258.0" prefHeight="24.0" prefWidth="165.0" text="Repeticiones" textFill="WHITE">
+      <ComboBox fx:id="tipo" layoutX="201.0" layoutY="131.0" prefHeight="26.0" prefWidth="166.0" promptText="Tipo" />
+      <Label alignment="CENTER" layoutX="20.0" layoutY="200.0" prefHeight="24.0" prefWidth="165.0" text="Repeticiones" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="16.0" />
          </font>
       </Label>
-      <ComboBox fx:id="series" layoutX="261.0" layoutY="214.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
-      <ComboBox fx:id="repeticiones" layoutX="261.0" layoutY="257.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
-      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
+      <ComboBox fx:id="series" layoutX="201.0" layoutY="165.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
+      <ComboBox fx:id="repeticiones" layoutX="201.0" layoutY="199.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
+      <Button layoutX="167.0" layoutY="363.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
       <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
@@ -52,5 +52,23 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label alignment="CENTER" layoutX="30.0" layoutY="280.0" prefHeight="24.0" prefWidth="165.0" text="Frecuencia" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="objetivo" layoutX="201.0" layoutY="235.0" prefHeight="26.0" prefWidth="111.0" promptText="Objetivo" />
+      <Label alignment="CENTER" layoutX="30.0" layoutY="317.0" prefHeight="24.0" prefWidth="165.0" text="Nivel de Dificultad" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="nivelDeDificultad" layoutX="201.0" layoutY="316.0" prefHeight="26.0" prefWidth="111.0" promptText="Dificultad" />
+      <TextField fx:id="frecuencia" layoutX="201.0" layoutY="279.0" prefHeight="26.0" prefWidth="111.0" />
+      <Label alignment="CENTER" layoutX="30.0" layoutY="236.0" prefHeight="24.0" prefWidth="165.0" text="Objetivo" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

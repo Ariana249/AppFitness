@@ -16,7 +16,6 @@ public class Usuario implements GEA<Usuario> {
     private int id;
     private String nombre;
     private String apellido;
-    private int edad;
     private float peso;
     private float altura;
     private float imc;
@@ -67,14 +66,6 @@ public class Usuario implements GEA<Usuario> {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public float getPeso() {

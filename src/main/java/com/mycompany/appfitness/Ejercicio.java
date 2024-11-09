@@ -15,11 +15,12 @@ import src.ConeccionDB;
  *
  * @author brook
  */
-public class Ejercicio extends Rutina implements GEA<Ejercicio>{
+public class Ejercicio extends Entrenamiento implements GEA<Ejercicio>{
     Connection conn = ConeccionDB.connect();
     private String grupoMuscular;
     private int repeticiones;
     private int series;
+    private Usuario usr;
 
     // Constructor
 
