@@ -23,7 +23,7 @@
          </font>
       </Label>
       <TextField fx:id="nombreIngresado" layoutX="67.0" layoutY="117.0" prefHeight="26.0" prefWidth="387.0" promptText="Nombre" />
-      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Agregar" />
+      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarComida" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Agregar" />
       <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
@@ -34,9 +34,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TextField fx:id="cantproteina" alignment="CENTER" layoutX="171.0" layoutY="157.0" prefHeight="26.0" prefWidth="180.0" promptText="Cantidad de proteínas" />
+      <TextField fx:id="cantProteinas" alignment="CENTER" layoutX="171.0" layoutY="157.0" prefHeight="26.0" prefWidth="180.0" promptText="Cantidad de proteínas" />
       <TextField fx:id="calorias" alignment="CENTER" layoutX="171.0" layoutY="196.0" prefHeight="26.0" prefWidth="180.0" promptText="Calorías" />
       <TextField fx:id="grasas" alignment="CENTER" layoutX="171.0" layoutY="234.0" prefHeight="26.0" prefWidth="180.0" promptText="Grasas" />
-      <ComboBox accessibleHelp="es opcional" layoutX="171.0" layoutY="273.0" prefHeight="25.0" prefWidth="180.0" promptText="Tipo" />
+      <ComboBox fx:id="tipoComida" accessibleHelp="es opcional" layoutX="171.0" layoutY="273.0" prefHeight="25.0" prefWidth="180.0" promptText="Tipo" />
    </children>
 </AnchorPane>

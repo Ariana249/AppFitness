@@ -24,14 +24,14 @@ public class DietaController implements Initializable {
 
     }
     
-    public void EliminarComida(ActionEvent event) {
+    public void AbrirEliminarComida(ActionEvent event) {
         Stage s = (Stage) this.botonElimnar.getScene().getWindow();
         s.close();
         App a = new App();
         a.AbrirEscena("/fxml/eliminarComida.fxml", "FITCOMPILER");
     }
     
-    public void AgregarComida(ActionEvent event) {
+    public void AbrirAgregarComida(ActionEvent event) {
         Stage s = (Stage) this.botonAgregar.getScene().getWindow();
         s.close();
         App a = new App();

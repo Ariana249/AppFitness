@@ -101,7 +101,6 @@ public class AgregarEjercicioController implements Initializable {
                         try {
                             //agregar con los nuevos elementos
 
-
                             c = new Ejercicio(nombreEj, tipoEj, Integer.parseInt(reps), Integer.parseInt(ser), objetivoEj, Integer.parseInt(frecuenciaEJ), dificultadEj, idLogin);
 
                             if (c.guardar(c)) {

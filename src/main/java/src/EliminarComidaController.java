@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class EliminarComidaController implements Initializable {
     private int idLogin = LoginModel.idLogin;
     private Comida com = new Comida();
+    
     @FXML
     private Button eliminar;
     @FXML
@@ -33,6 +34,7 @@ public class EliminarComidaController implements Initializable {
         com.setIdLogin(idLogin);        
         System.out.println(nombreCom);
         System.out.println(com.getIdLogin());
+        
         if (nombreCom.equalsIgnoreCase("Comida")) {
             JOptionPane.showMessageDialog(null, "Debe elegir una comida para eliminar.");
         } else {

@@ -26,11 +26,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Button fx:id="botonAgregar" accessibleHelp="mas desayuno" layoutX="146.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+      <Button fx:id="botonAgregar" accessibleHelp="mas desayuno" layoutX="146.0" layoutY="152.0" mnemonicParsing="false" onAction="#AbrirAgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button accessibleHelp="mas almuerzo" layoutX="351.0" layoutY="195.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0" />
       <Button fx:id="botonBorrarTodo" layoutX="183.0" layoutY="323.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
          <font>
             <Font name="System Bold" size="16.0" />
@@ -66,7 +65,7 @@
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <Button fx:id="botonElimnar" accessibleHelp="mas desayuno" layoutX="149.0" layoutY="214.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+      <Button fx:id="botonElimnar" accessibleHelp="mas desayuno" layoutX="149.0" layoutY="214.0" mnemonicParsing="false" onAction="#AbrirEliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -78,7 +77,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Button fx:id="botonAgregar1" accessibleHelp="mas desayuno" layoutX="294.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+      <Button fx:id="botonAgregar1" accessibleHelp="mas desayuno" layoutX="294.0" layoutY="152.0" mnemonicParsing="false" onAction="#AbrirAgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -88,7 +87,7 @@
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <Button fx:id="botonElimnar1" accessibleHelp="mas desayuno" layoutX="297.0" layoutY="213.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+      <Button fx:id="botonElimnar1" accessibleHelp="mas desayuno" layoutX="297.0" layoutY="213.0" mnemonicParsing="false" onAction="#AbrirEliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -101,7 +100,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Button fx:id="botonAgregar2" accessibleHelp="mas desayuno" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+      <Button fx:id="botonAgregar2" accessibleHelp="mas desayuno" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" onAction="#AbrirAgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -111,7 +110,7 @@
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <Button fx:id="botonElimnar2" accessibleHelp="mas desayuno" layoutX="443.0" layoutY="210.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+      <Button fx:id="botonElimnar2" accessibleHelp="mas desayuno" layoutX="443.0" layoutY="210.0" mnemonicParsing="false" onAction="#AbrirEliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

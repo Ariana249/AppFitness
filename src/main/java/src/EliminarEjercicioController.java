@@ -23,12 +23,8 @@ public class EliminarEjercicioController implements Initializable {
     @FXML
     private ComboBox comboEjercicios;
     
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
         this.comboEjercicios.setItems(FXCollections.observableArrayList(ej.buscarEj(idLogin)));
         comboEjercicios.setValue("Ejercicios");
     }    
