@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package src;
 
 import java.net.URL;
@@ -21,6 +17,13 @@ public class EliminarComidaController implements Initializable {
    public void initialize(URL url, ResourceBundle rb) {
         
     }  
+   
+    public void Volver(ActionEvent event) {
+        Stage s = (Stage) this.volver.getScene().getWindow();
+        s.close();
 
-    
+        App a = new App();
+        a.AbrirEscena("/fxml/dieta.fxml", "FITCOMPILER");
+
+    }
 }

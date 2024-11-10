@@ -84,6 +84,7 @@ public class AgregarEjercicioController implements Initializable {
         String ser = this.series.getValue().toString();
         String reps = this.repeticiones.getValue().toString();
         String dificultadEj = this.nivelDeDificultad.getValue().toString();
+        
         if (nombreEj.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del ejercicio.");
         } else {

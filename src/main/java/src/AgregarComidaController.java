@@ -22,5 +22,13 @@ public class AgregarComidaController implements Initializable {
    public void initialize(URL url, ResourceBundle rb) {
         
     }  
+    public void Volver(ActionEvent event) {
+        Stage s = (Stage) this.volver.getScene().getWindow();
+        s.close();
+
+        App a = new App();
+        a.AbrirEscena("/fxml/dieta.fxml", "FITCOMPILER");
+
+    }
 }
 

@@ -13,76 +13,108 @@
       <Pane layoutX="24.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
       <Pane layoutX="41.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
       <Pane layoutX="59.0" prefHeight="400.0" prefWidth="5.0" style="-fx-background-color: #4e9564;" />
-      <Label layoutX="124.0" layoutY="49.0" prefHeight="29.0" prefWidth="254.0" text="Elija su alimentación para:" textFill="WHITE">
+      <Label layoutX="100.0" layoutY="37.0" prefHeight="29.0" prefWidth="254.0" text="Elija su alimentación para:" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="167.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="146.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/++.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="528.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/++.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="348.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/++.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="botonAgregarComida" accessibleHelp="mas desayuno" layoutX="163.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonAgregarComida" accessibleHelp="mas cena" layoutX="524.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonAgregarComida" accessibleHelp="mas almuerzo" layoutX="344.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonBorrarTodo" layoutX="202.0" layoutY="349.0" mnemonicParsing="false" onAction="#Borrartodo" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
+      <Button fx:id="botonAgregar" accessibleHelp="mas desayuno" layoutX="146.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button accessibleHelp="mas almuerzo" layoutX="351.0" layoutY="195.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0" />
+      <Button fx:id="botonBorrarTodo" layoutX="183.0" layoutY="323.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="539.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="535.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
          </image>
       </ImageView>
-      <Button fx:id="volver" layoutX="539.0" layoutY="341.0" mnemonicParsing="false" onAction="#Volver" opacity="0.0" prefHeight="37.0" prefWidth="37.0">
+      <Button fx:id="volver" layoutX="535.0" layoutY="322.0" mnemonicParsing="false" onAction="#Volver" opacity="0.0" prefHeight="37.0" prefWidth="37.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="502.0" layoutY="155.0" prefHeight="29.0" prefWidth="52.0" text="Cena" textFill="WHITE">
+      <Label layoutX="431.0" layoutY="110.0" prefHeight="29.0" prefWidth="52.0" text="Cena" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="155.0" prefHeight="29.0" prefWidth="105.0" text="Almuerzo" textFill="WHITE">
+      <Label layoutX="263.0" layoutY="110.0" prefHeight="29.0" prefWidth="105.0" text="Almuerzo" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="155.0" prefHeight="29.0" prefWidth="105.0" text="Desayuno" textFill="WHITE">
+      <Label layoutX="115.0" layoutY="110.0" prefHeight="29.0" prefWidth="105.0" text="Desayuno" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="174.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="153.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="535.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="botonElimnar" accessibleHelp="mas desayuno" layoutX="149.0" layoutY="214.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="294.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="botonAgregar1" accessibleHelp="mas desayuno" layoutX="294.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="301.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="355.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="botonElimnar1" accessibleHelp="mas desayuno" layoutX="297.0" layoutY="213.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="440.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="botonAgregar2" accessibleHelp="mas desayuno" layoutX="440.0" layoutY="152.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="447.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="344.0" layoutY="241.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="163.0" layoutY="238.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="524.0" layoutY="241.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonElimnar2" accessibleHelp="mas desayuno" layoutX="443.0" layoutY="210.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>

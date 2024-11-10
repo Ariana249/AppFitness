@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package src;
 
 import com.mycompany.appfitness.Ejercicio;
@@ -13,21 +9,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import com.mycompany.appfitness.Usuario;
-import javafx.collections.FXCollections;
 import javafx.scene.control.Label;
 
-
-/**
- *
- * @author Usuario
- */
 public class MostrarRutinaController implements Initializable {
+    
     private int idLogin = LoginModel.idLogin;
     private Ejercicio ej = new Ejercicio();
+    
     @FXML
     private Button volver;
     @FXML
     private Label rutinaContenido;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
