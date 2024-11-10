@@ -118,7 +118,7 @@ public class Usuario implements GEA<Usuario> {
     }
 
     @Override
-    public void guardar(Usuario usr) {
+    public boolean guardar(Usuario usr) {
         String sql = "INSERT INTO usuario (nombre, apellido, peso, altura, objetivo,id_login) VALUES (?, ?, ?, ?, ?,?)";
 
         PreparedStatement pr;
@@ -133,19 +133,16 @@ public class Usuario implements GEA<Usuario> {
 
             pr.executeUpdate();
             pr.close();
+            return true;
         } catch (SQLException ex) {
             Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        return false;
     }
 
     @Override
-    public void eliminar(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void actualizar(Integer id, Usuario usr) {
+    public boolean actualizar(Integer id, Usuario usr) {
+        
         String updateQuery = "UPDATE usuario SET nombre = ?, apellido = ?, peso = ?, altura = ?, objetivo = ? WHERE id_login = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(updateQuery)) {
@@ -157,19 +154,29 @@ public class Usuario implements GEA<Usuario> {
             pr.setInt(6, id);
 
             int affectedRows = pr.executeUpdate();
+            pr.close();
             if (affectedRows > 0) {
                 System.out.println("Datos actualizados correctamente.");
+                return true;
             } else {
                 System.out.println("No se pudo actualizar los datos.");
             }
 
-            pr.close();
+            
+            
         } catch (SQLException e) {
             System.err.println("Error al actualizar datos: " + e.getMessage());
         }
+        return false;
     }
 
-    public Usuario buscarUsr(int id) {
+    @Override
+    public boolean eliminar(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
+    public Usuario buscarUsr(Integer id) {
         String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
         Usuario usr = null;
 
@@ -186,4 +193,6 @@ public class Usuario implements GEA<Usuario> {
 
         return usr;
     }
+    
+    
 }

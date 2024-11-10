@@ -44,7 +44,7 @@ public class BienvenidaController implements Initializable {
     @FXML
     public void Continuar(ActionEvent event) {
         Usuario usr;
-        
+
         String nombre = this.nombreIngresado.getText();
         String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
@@ -57,18 +57,35 @@ public class BienvenidaController implements Initializable {
             if (opcion.equalsIgnoreCase("Objetivo")) {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
-                
-                usr = new Usuario(nombre,apellido,Float.parseFloat(peso),Float.parseFloat(altura),opcion,idLogin);
-                
-                usr.guardar(usr);
-                
-                Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
-                stage.close();
+                if (!esNumerico(peso) || !esNumerico(altura)) {
+                    JOptionPane.showMessageDialog(null, "Debe ingresar numeros en peso y altura!!");
+                } else {
 
-                App a = new App();
-                a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+                    usr = new Usuario(nombre, apellido, Float.parseFloat(peso), Float.parseFloat(altura), opcion, idLogin);
 
+                    if (usr.guardar(usr)) {
+                        JOptionPane.showMessageDialog(null, "Te has registrado correctamente!");
+
+                        Stage stage = (Stage) this.botonContinuar.getScene().getWindow();
+                        stage.close();
+
+                        App a = new App();
+                        a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Hubo un error. Intenta denuevo");
+                    }
+
+                }
             }
+        }
+    }
+
+    private boolean esNumerico(String str) {
+        try {
+            Float.parseFloat(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 }

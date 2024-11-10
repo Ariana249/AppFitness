@@ -1,22 +1,58 @@
 package src;
 
+import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 public class EliminarEjercicioController implements Initializable {
-
+    private int idLogin = LoginModel.idLogin;
+    private Ejercicio ej = new Ejercicio();
+    
     @FXML
     private Button volver;
+    
+    @FXML
+    private ComboBox comboEjercicios;
+    
+    @FXML
+    private CheckBox checkEliminar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        this.comboEjercicios.setItems(FXCollections.observableArrayList(ej.buscarEj(idLogin)));
+        comboEjercicios.setValue("Ejercicios");
     }    
+    
+
+    public void eliminarEjercicio(ActionEvent event){
+        String nombreEj = this.comboEjercicios.getValue().toString();
+        String check = this.checkEliminar.getTypeSelector();  
+        ej.setIdLogin(idLogin);        
+        System.out.println(nombreEj);
+        System.out.println(ej.getIdLogin());
+        if (nombreEj.equalsIgnoreCase("Ejercicios")) {
+            JOptionPane.showMessageDialog(null, "Debe elegir un ejercicio para eliminar.");
+        } else {
+            if(ej.eliminar(nombreEj)){
+                JOptionPane.showMessageDialog(null, "El ejercicio se ha eliminado correctamente!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Hubo un error. Intente denuevo");
+            }
+            
+        }
+
+    }
     
     public void Volver(ActionEvent event) {
         Stage s = (Stage) this.volver.getScene().getWindow();

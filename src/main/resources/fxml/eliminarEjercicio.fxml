@@ -13,7 +13,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.EliminarEjercicioController">
    <children>
       <CheckBox fx:id="checkEliminar" layoutX="214.0" layoutY="166.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="182.0" text="Estoy seguro de eliminarlo" textFill="WHITE" />
-      <Button fx:id="eliminar" layoutX="217.0" layoutY="234.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #4e9564;" text="Eliminar" />
+      <Button fx:id="eliminar" layoutX="217.0" layoutY="234.0" mnemonicParsing="false" onAction="#eliminarEjercicio" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #4e9564;" text="Eliminar" />
       <Label layoutX="35.0" layoutY="59.0" prefHeight="29.0" prefWidth="378.0" text="Indique el ejercicio que quiere eliminar" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />

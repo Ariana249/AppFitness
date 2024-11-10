@@ -43,37 +43,43 @@ public class UsuarioController implements Initializable {
 
     @FXML
     public void Listo(ActionEvent event) {
-        
-        Usuario usr;        
-        
+
+        Usuario usr;
+
         String nombre = this.nombreIngresado.getText();
         String apellido = this.apellidoIngresado.getText();
         String altura = this.alturaIngresada.getText();
         String peso = this.pesoIngresado.getText();
         String opcion = this.objetivo.getValue().toString();
 
-        if (nombre.isEmpty() || altura.isEmpty() || peso.isEmpty()) {
+        if (nombre.isEmpty() || apellido.isEmpty() || altura.isEmpty() || peso.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe Ingresar los Datos para continuar.");
         } else {
             if (opcion.equalsIgnoreCase("Objetivo")) {
                 JOptionPane.showMessageDialog(null, "Debe Elegir un Objetivo.");
             } else {
-                try {
+                if (!esNumerico(peso) || !esNumerico(altura)) {
+                    JOptionPane.showMessageDialog(null, "Debe ingresar numeros en peso y altura!!");
+                } else {
+                    try {
 
-                    usr = new Usuario(nombre,apellido,Float.parseFloat(peso),Float.parseFloat(altura),opcion);
-                
-                    //busca el usuario y lo actualiza con los datos que le pasamos                                        
-                    usr.actualizar(idLogin,usr);
-                    
-                    JOptionPane.showMessageDialog(null, "Tus datos han sido actualizados");
+                        usr = new Usuario(nombre, apellido, Float.parseFloat(peso), Float.parseFloat(altura), opcion);
 
-                } catch (Exception e) {
-                    e.printStackTrace();
+                        //busca el usuario y lo actualiza con los datos que le pasamos                                        
+                        if (usr.actualizar(idLogin, usr)) {
+                            JOptionPane.showMessageDialog(null, "Tus datos han sido actualizados!");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Hubo un error. Intenta denuevo!");
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
     }
-    
+
     public void Volver(ActionEvent event) {
         Stage s = (Stage) this.volver.getScene().getWindow();
         s.close();
@@ -83,4 +89,12 @@ public class UsuarioController implements Initializable {
 
     }
     
+    private boolean esNumerico(String str){
+        try {
+            Float.parseFloat(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

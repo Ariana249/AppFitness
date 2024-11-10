@@ -6,7 +6,9 @@ package com.mycompany.appfitness;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import src.ConeccionDB;
@@ -15,32 +17,29 @@ import src.ConeccionDB;
  *
  * @author brook
  */
-public class Ejercicio extends Entrenamiento implements GEA<Ejercicio>{
+public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
+
     Connection conn = ConeccionDB.connect();
-    
+
     //Atributos 
-    
     private String grupoMuscular;
     private int repeticiones;
     private int series;
-    private int idUsuario;
+    private int idLogin;
 
     // Constructor
-
     public Ejercicio() {
     }
 
-    public Ejercicio(String nombre, String grupoMuscular, int repeticiones, int series, String objetivo, int frecuencia, String nivelDeDificultad, int idUsuario ) {
+    public Ejercicio(String nombre, String grupoMuscular, int repeticiones, int series, String objetivo, int frecuencia, String nivelDeDificultad, int idLogin) {
         super(objetivo, frecuencia, nivelDeDificultad, nombre);
         this.grupoMuscular = grupoMuscular;
         this.repeticiones = repeticiones;
         this.series = series;
-        this.idUsuario = idUsuario;
+        this.idLogin = idLogin;
     }
-    
-    
-    // Getters y Setters
 
+    // Getters y Setters
     public int getRepeticiones() {
         return repeticiones;
     }
@@ -55,7 +54,7 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio>{
 
     public void setSeries(int series) {
         this.series = series;
-    }    
+    }
 
     public String getGrupoMuscular() {
         return grupoMuscular;
@@ -65,48 +64,79 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio>{
         this.grupoMuscular = grupoMuscular;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public int getIdLogin() {
+        return idLogin;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdLogin(int idLogin) {
+        this.idLogin = idLogin;
     }
 
-    
     // Metodos
-    
     @Override
-    public void guardar(Ejercicio c) {
+    public boolean guardar(Ejercicio c) {
         try {
-            String sql = "INSERT INTO rutina (nombreEjercicio, grupo_muscular, repeticiones, series, objetivo, frecuencia, dificultad, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            
+            String sql = "INSERT INTO ejercicio (nombreEjercicio, grupo_muscular, repeticiones, series, objetivo, frecuencia, dificultad, id_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
             PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
             pr.setString(1, c.getNombre());
             pr.setString(2, c.getGrupoMuscular());
             pr.setInt(3, c.getRepeticiones());
-            pr.setInt(4, c.getSeries());            
+            pr.setInt(4, c.getSeries());
             pr.setString(5, c.getObjetivo());
             pr.setInt(6, c.getFrecuencia());
             pr.setString(7, c.getNivelDeDificultad());
-            pr.setInt(8,c.getIdUsuario());
-            
+            pr.setInt(8, c.getIdLogin());
+
             pr.executeUpdate();
             pr.close();
+            return true;
         } catch (SQLException ex) {
             Logger.getLogger(Ejercicio.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return false;
     }
 
     @Override
-    public void eliminar(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean eliminar(String nombre) {
+        String sql = "DELETE FROM ejercicio WHERE id_login = ? AND nombreEjercicio = ?";        
+        try(PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql)) {            
+            pr.setInt(1, getIdLogin());
+            pr.setString(2, nombre);
+            
+            pr.executeUpdate();
+            pr.close();
+            
+            return true;
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar ejercicio " + e.getMessage());
+        } catch(Exception ex){
+            System.err.println("Error: " + ex.getMessage());
+        }        
+        return false;
     }
 
     @Override
-    public void actualizar(Integer id, Ejercicio c) {
+    public boolean actualizar(Integer id, Ejercicio c) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
+
+    public ArrayList<String> buscarEj(Integer id) {
+        ArrayList<String> ejercicios = new ArrayList();
+        String readQuery = "SELECT nombreEjercicio FROM ejercicio WHERE id_login = ?";
+
+        try (PreparedStatement pr = conn.prepareStatement(readQuery)) {
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            while (rs.next()) {
+                ejercicios.add(rs.getString("nombreEjercicio"));
+            }
+            pr.close();
+        } catch (SQLException e) {
+            System.err.println("Error al buscar ejercicio: " + e.getMessage());
+        }
+
+        return ejercicios;
+    }
+
 }
