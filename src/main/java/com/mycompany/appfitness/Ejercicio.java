@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.appfitness;
 
 import java.sql.Connection;
@@ -13,10 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import src.ConeccionDB;
 
-/**
- *
- * @author brook
- */
 public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
     Connection conn = ConeccionDB.connect();

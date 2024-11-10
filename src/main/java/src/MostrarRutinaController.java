@@ -9,30 +9,32 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import com.mycompany.appfitness.Usuario;
-import javafx.scene.control.Label;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 
 public class MostrarRutinaController implements Initializable {
-    
+
     private int idLogin = LoginModel.idLogin;
     private Ejercicio ej = new Ejercicio();
-    
+
     @FXML
     private Button volver;
     @FXML
-    private Label rutinaContenido;
-    
+    private ListView<String> listaEjercicios;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
         if (usuario != null) {
-            //rutinaContenido.setText(ej.buscarEj(idLogin));
-            //pasar a array
+            ObservableList<String> lista = FXCollections.observableArrayList(ej.buscarEj(idLogin));
+            listaEjercicios.setItems(lista);
         } else {
             System.out.println("No se encontró un usuario con el id_Login especificado.");
         }
     }
-     
-     public void Volver(ActionEvent event) {
+
+    public void Volver(ActionEvent event) {
         Stage s = (Stage) this.volver.getScene().getWindow();
         s.close();
 
@@ -40,6 +42,4 @@ public class MostrarRutinaController implements Initializable {
         a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
 
     }
-
-    
 }

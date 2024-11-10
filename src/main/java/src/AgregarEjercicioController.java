@@ -109,8 +109,6 @@ public class AgregarEjercicioController implements Initializable {
                                 JOptionPane.showMessageDialog(null, "Hubo un error. Intente nuevamente!");
                             }
 
-                            initialize(null, null);
-
                         } catch (Exception e) {
                             System.out.println("Error: " + e.getMessage());
                         }

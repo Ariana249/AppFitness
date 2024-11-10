@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package src;
 
 import com.mycompany.appfitness.Comida;
-import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
