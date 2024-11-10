@@ -23,8 +23,7 @@ public class EliminarEjercicioController implements Initializable {
     @FXML
     private ComboBox comboEjercicios;
     
-    @FXML
-    private CheckBox checkEliminar;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -37,7 +36,7 @@ public class EliminarEjercicioController implements Initializable {
 
     public void eliminarEjercicio(ActionEvent event){
         String nombreEj = this.comboEjercicios.getValue().toString();
-        String check = this.checkEliminar.getTypeSelector();  
+         
         ej.setIdLogin(idLogin);        
         System.out.println(nombreEj);
         System.out.println(ej.getIdLogin());
