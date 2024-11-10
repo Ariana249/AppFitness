@@ -41,7 +41,7 @@
       </Label>
       <ComboBox fx:id="series" layoutX="201.0" layoutY="165.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
       <ComboBox fx:id="repeticiones" layoutX="201.0" layoutY="199.0" prefHeight="26.0" prefWidth="75.0" promptText="1" />
-      <Button layoutX="167.0" layoutY="363.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
+      <Button fx:id="botonGuardar" layoutX="167.0" layoutY="363.0" mnemonicParsing="false" onAction="#GuardarEjercicio" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Crear" />
       <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />

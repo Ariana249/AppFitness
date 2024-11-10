@@ -33,10 +33,10 @@
             <Image url="@../imagenes/++.png" />
          </image>
       </ImageView>
-      <Button accessibleHelp="mas desayuno" layoutX="163.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button accessibleHelp="mas cena" layoutX="524.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button accessibleHelp="mas almuerzo" layoutX="344.0" layoutY="188.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button layoutX="202.0" layoutY="349.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
+      <Button fx:id="botonAgregarComida" accessibleHelp="mas desayuno" layoutX="163.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonAgregarComida" accessibleHelp="mas cena" layoutX="524.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonAgregarComida" accessibleHelp="mas almuerzo" layoutX="344.0" layoutY="188.0" mnemonicParsing="false" onAction="#AgregarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonBorrarTodo" layoutX="202.0" layoutY="349.0" mnemonicParsing="false" onAction="#Borrartodo" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -81,8 +81,8 @@
             <Image url="@../imagenes/menos.png" />
          </image>
       </ImageView>
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="344.0" layoutY="241.0" mnemonicParsing="false" onAction="#eliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="163.0" layoutY="238.0" mnemonicParsing="false" onAction="#eliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
-      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="524.0" layoutY="241.0" mnemonicParsing="false" onAction="#eliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="344.0" layoutY="241.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="163.0" layoutY="238.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
+      <Button fx:id="botonEliminarComida" accessibleHelp="mas desayuno" layoutX="524.0" layoutY="241.0" mnemonicParsing="false" onAction="#EliminarComida" opacity="0.0" prefHeight="50.0" prefWidth="52.0" />
    </children>
 </Pane>
