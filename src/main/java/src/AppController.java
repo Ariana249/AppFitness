@@ -18,13 +18,17 @@ public class AppController implements Initializable {
     @FXML
     private Button botonPerfil;
     @FXML
-    private Button botonCrearDieta;
+    private Button botonAgregarComida;
+    @FXML
+    private Button botonEliminarComida;
     @FXML
     private Button botonActualizarDatos;
     @FXML
     private Button botonEliminarEjercicio;
     @FXML
     private Button botonMostrarRutina;
+    @FXML
+    private Button botonMostrarDieta;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,15 +53,6 @@ public class AppController implements Initializable {
     }
     
     @FXML
-    public void CrearDieta(ActionEvent event) {
-        Stage s = (Stage)this.botonCrearDieta.getScene().getWindow();
-        s.close();
-        
-        App a = new App();
-        a.AbrirEscena("/fxml/dieta.fxml", "FITCOMPILER");
-    }
-    
-    @FXML
     public void abrirAgregarEjercicio(ActionEvent event) {
         Stage s = (Stage)this.botonAgregarEjercicio.getScene().getWindow();
         s.close();
@@ -79,7 +74,30 @@ public class AppController implements Initializable {
         App a = new App();
         a.AbrirEscena("/fxml/mostrarRutina.fxml", "FITCOMPILER");
     }
-
+    
+    @FXML
+    public void AbrirEliminarComida(ActionEvent event) {
+        Stage s = (Stage) this.botonEliminarComida.getScene().getWindow();
+        s.close();
+        App a = new App();
+        a.AbrirEscena("/fxml/eliminarComida.fxml", "FITCOMPILER");
+    }
+    @FXML
+    public void AbrirAgregarComida(ActionEvent event) {
+        Stage s = (Stage) this.botonAgregarComida.getScene().getWindow();
+        s.close();
+        App a = new App();
+        a.AbrirEscena("/fxml/agregarComida.fxml", "FITCOMPILER");
+    }
+    
+    @FXML
+    public void mostrarDieta(ActionEvent event) {
+        Stage s = (Stage)this.botonMostrarDieta.getScene().getWindow();
+        s.close();
+        App a = new App();
+        a.AbrirEscena("/fxml/mostrarDieta.fxml", "FITCOMPILER");
+    }
+    
     @FXML
     public void CerrarSesion(ActionEvent evento) {
 

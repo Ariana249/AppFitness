@@ -78,7 +78,7 @@ public class AgregarComidaController implements Initializable {
         s.close();
 
         App a = new App();
-        a.AbrirEscena("/fxml/dieta.fxml", "FITCOMPILER");
+        a.AbrirEscena("/fxml/app.fxml", "FITCOMPILER");
 
     }
 }

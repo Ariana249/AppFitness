@@ -91,26 +91,26 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
     @Override
     public boolean eliminar(String nombre) {
-        String sql = "DELETE FROM ejercicio WHERE id_login = ? AND nombreEjercicio = ?";        
-        try(PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql)) {            
+        String sql = "DELETE FROM ejercicio WHERE id_login = ? AND nombreEjercicio = ?";
+        try (PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql)) {
             pr.setInt(1, getIdLogin());
             pr.setString(2, nombre);
-            
+
             pr.executeUpdate();
             pr.close();
-            
+
             return true;
         } catch (SQLException e) {
             System.err.println("Error al eliminar ejercicio " + e.getMessage());
-        } catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println("Error: " + ex.getMessage());
-        }        
+        }
         return false;
     }
 
     @Override
     public boolean actualizar(Integer id, Ejercicio c) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public ArrayList<String> buscarEj(Integer id) {
@@ -139,20 +139,11 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
             pr.setInt(1, idLogin);
             ResultSet rs = pr.executeQuery();
             while (rs.next()) {
-                Ejercicio ejercicio = new Ejercicio(
-                        rs.getString("nombreEjercicio"),
-                        rs.getString("grupo_muscular"),
-                        rs.getInt("repeticiones"),
-                        rs.getInt("series"),
-                        rs.getString("objetivo"),
-                        rs.getInt("frecuencia"),
-                        rs.getString("dificultad"),
-                        idLogin
-                );
+                Ejercicio ejercicio = new Ejercicio(rs.getString("nombreEjercicio"),rs.getString("grupo_muscular"),rs.getInt("repeticiones"),rs.getInt("series"),rs.getString("objetivo"),rs.getInt("frecuencia"),rs.getString("dificultad"),idLogin);
                 ejercicios.add(ejercicio);
             }
         } catch (SQLException e) {
-            System.err.println("Error al buscar ejercicios: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
         }
 
         return ejercicios;

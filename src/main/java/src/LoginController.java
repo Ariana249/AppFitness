@@ -17,10 +17,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import src.LoginModel;
 
 public class LoginController implements Initializable {
 
-    LoginModel modeloLogin = new LoginModel();
+    LoginModel modeloLogin = LoginModel();
     //Inicializamos conn como atributo Connection para tener la coneccion con la base de datos
     Connection conn = ConeccionDB.connect();
 

@@ -1,5 +1,6 @@
 package src;
 
+import src.LoginModel;
 import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +24,7 @@ public class MostrarRutinaController implements Initializable {
     private Button volver;
     @FXML
     private ListView<Ejercicio> listaEjercicios;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
@@ -39,16 +40,13 @@ public class MostrarRutinaController implements Initializable {
                     if (empty || item == null) {
                         setText(null);
                     } else {
-                        setText("Nombre: "+ item.getNombre() + " - "
-                                + "Grupo Muscular: " +item.getGrupoMuscular() + " - "
-                                + item.getSeries() + " series de "
-                                + item.getRepeticiones() + " repeticiones - "
-                                + item.getFrecuencia() + " veces por semana - ");
+                        int indice = listaEjercicios.getItems().indexOf(item) + 1;
+                        setText(indice + ") " + item.getNombre() + " - " + item.getSeries() + " series de " + item.getRepeticiones() + " repeticiones - " + "Frecuencia: " + item.getFrecuencia() + " - " + "(" + item.getGrupoMuscular() + ")");
                     }
                 }
             });
         } else {
-            System.out.println("No se encontrÃ³ un usuario con el id_Login especificado.");
+            System.out.println("No se encontro un usuario con el id_Login especificado.");
         }
     }
 

@@ -1,5 +1,6 @@
 package src;
 
+import src.LoginModel;
 import com.mycompany.appfitness.Ejercicio;
 import java.net.URL;
 import java.util.ResourceBundle;

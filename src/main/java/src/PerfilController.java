@@ -1,5 +1,6 @@
 package src;
 
+import src.LoginModel;
 import com.mycompany.appfitness.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
 
 public class PerfilController implements Initializable {
 
-    private int idLogin = LoginModel.idLogin;
+    int idLogin = LoginModel.idLogin;
 
     @FXML
     private Button volver;

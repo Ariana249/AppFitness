@@ -6,11 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import src.ConeccionDB;
 
 public class LoginModel {
 
     Connection coneccion;
-    static int idLogin;
+    public static int idLogin;
 
     public LoginModel() {
         this.coneccion = ConeccionDB.connect();

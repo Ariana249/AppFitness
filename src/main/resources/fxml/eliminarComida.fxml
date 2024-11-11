@@ -11,13 +11,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.EliminarComidaController">
    <children>
-      <Button fx:id="eliminar" layoutX="217.0" layoutY="234.0" mnemonicParsing="false" onAction="#eliminarComida" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: #4e9564;" text="Eliminar" />
-      <Label layoutX="35.0" layoutY="59.0" prefHeight="29.0" prefWidth="378.0" text="Indique la comida que quiere eliminar" textFill="WHITE">
+      <Label layoutX="50.0" layoutY="83.0" prefHeight="29.0" prefWidth="378.0" text="Indique la comida que quiere eliminar:" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboComida" layoutX="217.0" layoutY="122.0" prefHeight="26.0" prefWidth="166.0" promptText="Comidas" />
+      <ComboBox fx:id="comboComida" layoutX="178.0" layoutY="165.0" prefHeight="26.0" prefWidth="166.0" promptText="Comidas" />
       <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="35.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
@@ -28,5 +27,20 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="388.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/menos.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="eliminar" accessibleHelp="mas desayuno" layoutX="384.0" layoutY="161.0" mnemonicParsing="false" onAction="#eliminarComida" opacity="0.0" prefHeight="35.0" prefWidth="37.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label alignment="CENTER" layoutX="178.0" layoutY="16.0" prefHeight="41.0" prefWidth="243.0" text="Eliminar Comida" textFill="#4e9564">
+         <font>
+            <Font name="Verdana Italic" size="25.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

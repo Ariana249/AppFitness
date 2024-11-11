@@ -1,5 +1,6 @@
 package src;
 
+import src.LoginModel;
 import com.mycompany.appfitness.Usuario;
 import opciones.OpcionObjetivo;
 import java.net.URL;
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
 
 public class UsuarioController implements Initializable {
 
-    private int idLogin = LoginModel.idLogin;
+    int idLogin = LoginModel.idLogin;
 
     @FXML
     private ComboBox objetivo;
