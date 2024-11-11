@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -11,13 +12,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a2f2b;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.MostrarDietaController">
    <children>
-      <ComboBox layoutX="225.0" layoutY="127.0" prefWidth="150.0" promptText="Comida" />
-      <Label fx:id="comidaContenido" layoutX="18.0" layoutY="167.0" prefHeight="174.0" prefWidth="564.0" textFill="#309eff">
-         <font>
-            <Font name="Malgun Gothic" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="96.0" layoutY="61.0" prefHeight="29.0" prefWidth="378.0" text="¿Qué tipo de comida desea ver?" textFill="WHITE">
+      <Pane layoutX="236.0" layoutY="89.0" prefHeight="296.0" prefWidth="129.0" style="-fx-background-color: #4e9564;" />
+      <ComboBox layoutX="225.0" layoutY="100.0" prefWidth="150.0" promptText="Comida" />
+      <Label layoutX="56.0" layoutY="40.0" prefHeight="29.0" prefWidth="378.0" text="¿Qué tipo de comida desea ver?" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="20.0" />
          </font>
@@ -32,5 +29,6 @@
             <Image url="@../imagenes/volver.png" />
          </image>
       </ImageView>
+      <ListView fx:id="listaNombres" layoutX="137.0" layoutY="136.0" prefHeight="234.0" prefWidth="327.0" />
    </children>
 </Pane>

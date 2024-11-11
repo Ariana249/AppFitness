@@ -130,23 +130,31 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
         return ejercicios;
     }
-    
-    public Ejercicio buscarTodoEjercicio(Integer id) {
-        String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
-        Ejercicio ej = null;
+
+    public ArrayList<Ejercicio> listaEjercicios(int idLogin) {
+        ArrayList<Ejercicio> ejercicios = new ArrayList<>();
+        String readQuery = "SELECT nombreEjercicio, grupo_muscular, repeticiones, series, objetivo, frecuencia, dificultad FROM ejercicio WHERE id_login = ?";
 
         try (PreparedStatement pr = conn.prepareStatement(readQuery)) {
-            pr.setInt(1, id);
+            pr.setInt(1, idLogin);
             ResultSet rs = pr.executeQuery();
-            if (rs.next()) {
-                ej = new Ejercicio(rs.getString("nombreEjercicio"), rs.getString("grupo_muscular"), rs.getInt("repeticiones"), rs.getInt("series"),rs.getString("objetivo"), rs.getInt("frecuencia"),rs.getString("dificultad"), rs.getInt("id_login"));
+            while (rs.next()) {
+                Ejercicio ejercicio = new Ejercicio(
+                        rs.getString("nombreEjercicio"),
+                        rs.getString("grupo_muscular"),
+                        rs.getInt("repeticiones"),
+                        rs.getInt("series"),
+                        rs.getString("objetivo"),
+                        rs.getInt("frecuencia"),
+                        rs.getString("dificultad"),
+                        idLogin
+                );
+                ejercicios.add(ejercicio);
             }
-           
-            pr.close();
         } catch (SQLException e) {
-            System.err.println("Error al buscar el usuario: " + e.getMessage());
+            System.err.println("Error al buscar ejercicios: " + e.getMessage());
         }
 
-        return ej;
-}
+        return ejercicios;
+    }
 }

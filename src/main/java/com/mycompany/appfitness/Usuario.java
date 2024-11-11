@@ -34,6 +34,14 @@ public class Usuario implements GEA<Usuario> {
         this.idLogin = idLogin;
     }
 
+    public Usuario(String nombre, String apellido, float peso, float altura, String objetivo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.peso = peso;
+        this.altura = altura;
+        this.objetivo = objetivo;
+    }
+
     //Getters & Setters
     public int getId() {
         return id;
