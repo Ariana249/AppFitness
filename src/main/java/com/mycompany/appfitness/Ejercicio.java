@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import src.ConeccionDB;
+import database.ConeccionDB;
 
 public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 

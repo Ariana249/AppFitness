@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import src.ConeccionDB;
+import database.ConeccionDB;
 
 public class Dieta implements GEA<Dieta> {
 

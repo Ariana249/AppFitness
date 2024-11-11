@@ -1,5 +1,6 @@
 package src;
 
+import database.ConeccionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
 public class LoginModel {
 
     Connection coneccion;
-    static int idLogin;
+    public static int idLogin;
 
     public LoginModel() {
         this.coneccion = ConeccionDB.connect();

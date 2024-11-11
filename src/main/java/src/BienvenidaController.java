@@ -1,5 +1,6 @@
 package src;
 
+import database.ConeccionDB;
 import com.mycompany.appfitness.Usuario;
 import java.net.URL;
 import java.sql.Connection;
