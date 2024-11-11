@@ -50,7 +50,8 @@ public class MostrarDietaController implements Initializable {
     private void actualizarListaComidas(String tipoComida) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
         if (usuario != null) {
-            ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idLogin, tipoComida));
+            int idDieta = com.buscarDietaPorTipo(idLogin,tipoComida);
+            ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idDieta));
             listaComida.setItems(lista);
             // Configurar el formato de cada celda para mostrar todos los atributos
             listaComida.setCellFactory(lv -> new ListCell<>() {
@@ -60,7 +61,7 @@ public class MostrarDietaController implements Initializable {
                         setText(null);
                     } else {
                         int indice = listaComida.getItems().indexOf(item) + 1;
-                        setText(indice + ") " + item.getNombreComida()+ " - " + item.getCantProteina()+ " gr. de proteina - " + item.getCalorias()+ " calorias - " + item.getGrasas()+ " grasas");
+                        setText(indice + ") " + item.getNombreComida() + " - " + item.getCantProteina() + " gr. de proteina - " + item.getCalorias() + " calorias - " + item.getGrasas() + " grasas");
                     }
                 }
             });

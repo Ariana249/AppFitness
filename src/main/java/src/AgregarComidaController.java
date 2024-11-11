@@ -1,6 +1,8 @@
 package src;
 
 import com.mycompany.appfitness.Comida;
+import com.mycompany.appfitness.Dieta;
+import com.mycompany.appfitness.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -44,6 +46,9 @@ public class AgregarComidaController implements Initializable {
 
     public void GuardarComida(ActionEvent event){
         Comida c;
+        Dieta d;
+        Usuario usr = new Usuario();
+        usr.setIdLogin(idLogin);
         
         String nombreComida = this.nombreIngresado.getText();
         String cantProteina = this.cantProteinas.getText();
@@ -58,8 +63,15 @@ public class AgregarComidaController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Debe elegir el tipo de la comida.");
             } else {
                 try {
+                    d = new Dieta(tipo);
+                    d.setUsr(usr);
+                    if (d.guardar(d)) {
+                        System.out.println("Se guardo la dieta correctamente");
+                    } else {
+                        System.out.println("No se guardo la dieta");
+                    }
                     
-                    c = new Comida(nombreComida, Float.parseFloat(cantProteina), Float.parseFloat(calorias), Float.parseFloat(grasas), tipo, idLogin);
+                    c = new Comida(nombreComida, Float.parseFloat(cantProteina), Float.parseFloat(calorias), Float.parseFloat(grasas),d.buscarDietaPorTipo(idLogin,tipo));
                     
                     if (c.guardar(c)) {
                         JOptionPane.showMessageDialog(null, "Comida Agregada Correctamente!");

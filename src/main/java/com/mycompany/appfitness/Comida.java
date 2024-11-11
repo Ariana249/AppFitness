@@ -22,29 +22,21 @@ public class Comida implements GEA<Comida> {
     private float cantProteina;
     private float calorias;
     private float grasas;
-    private String tipo;
-
-    private int idLogin;
+    private int idDieta;
     Connection conn = ConeccionDB.connect();
 
 
     public Comida() {
     }
 
-    public Comida(String nombreComida, float cantProteina, float calorias, float grasas, int idLogin) {
+    public Comida(String nombreComida, float cantProteina, float calorias, float grasas, int idDieta) {
         this.nombreComida = nombreComida;
         this.cantProteina = cantProteina;
         this.calorias = calorias;
         this.grasas = grasas;
+        this.idDieta = idDieta;
     }
 
-    public Comida(String nombreComida, float cantProteina, float calorias, float grasas,String tipo, int idLogin) {
-        this.nombreComida = nombreComida;
-        this.cantProteina = cantProteina;
-        this.calorias = calorias;
-        this.grasas = grasas;
-        this.idLogin = idLogin;
-    }
     
     public String getNombreComida() {
         return nombreComida;
@@ -78,21 +70,12 @@ public class Comida implements GEA<Comida> {
         this.grasas = grasas;
     }
 
-
-    public String getTipo() {
-        return tipo;
+    public int getIdDieta() {
+        return idDieta;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public int getIdLogin() {
-        return idLogin;
-    }
-
-    public void setIdLogin(int idLogin) {
-        this.idLogin = idLogin;
+    public void setIdDieta(int idDieta) {
+        this.idDieta = idDieta;
     }
 
     
@@ -117,9 +100,9 @@ public class Comida implements GEA<Comida> {
 
     @Override
     public boolean eliminar(String nombre) {
-        String sql = "DELETE FROM comida WHERE id_login = ? AND nombreComida = ?";
+        String sql = "DELETE FROM comida WHERE id_dieta = ? AND nombreComida = ?";
         try (PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql)) {
-            pr.setInt(1, getIdLogin());
+            pr.setInt(1, getIdDieta());
             pr.setString(2, nombre);
 
             pr.executeUpdate();
@@ -137,15 +120,14 @@ public class Comida implements GEA<Comida> {
     @Override
     public boolean guardar(Comida c) {
         try {
-            String sql = "INSERT INTO comida (nombreComida, cantProteina, calorias, grasas, tipo, id_login) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO comida (nombreComida, cantProteina, calorias, grasas, id_dieta) VALUES (?, ?, ?, ?, ?)";
 
             PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
             pr.setString(1, c.getNombreComida());
             pr.setFloat(2, c.getCantProteina());
             pr.setFloat(3, c.getCalorias());
             pr.setFloat(4, c.getGrasas());
-            pr.setString(5, c.getTipo());
-            pr.setInt(6, c.getIdLogin());
+            pr.setInt(5, c.getIdDieta());
 
             pr.executeUpdate();
             pr.close();
