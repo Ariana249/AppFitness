@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import com.mycompany.appfitness.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
 public class MostrarRutinaController implements Initializable {
@@ -21,27 +22,33 @@ public class MostrarRutinaController implements Initializable {
     @FXML
     private Button volver;
     @FXML
-    private ListView<String> listaNombres;
-    @FXML
-    private ListView<String> listaGMuscular;
-    @FXML
-    private ListView<Float> listaRepeticiones;
-    @FXML
-    private ListView<Float> listaSeries;
-    @FXML
-    private ListView<String> listaObjetivos;
-    @FXML
-    private ListView<Float> listaFrecuencia;
-    @FXML
-    private ListView<String> listaDificultad;
+    private ListView<Ejercicio> listaEjercicios;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
         if (usuario != null) {
-            ObservableList<String> lista = FXCollections.observableArrayList(ej.buscarEj(idLogin));
-            listaNombres.setItems(lista);
+            ObservableList<Ejercicio> lista = FXCollections.observableArrayList(ej.listaEjercicios(idLogin));
+            listaEjercicios.setItems(lista);
+
+            // Configurar el formato de cada celda para mostrar todos los atributos
+            listaEjercicios.setCellFactory(lv -> new ListCell<>() {
+                @Override
+                protected void updateItem(Ejercicio item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                    } else {
+                        setText("Nombre: "+ item.getNombre() + " - "
+                                + "Grupo Muscular: " +item.getGrupoMuscular() + " - "
+                                + item.getSeries() + " series de "
+                                + item.getRepeticiones() + " repeticiones - "
+                                + item.getFrecuencia() + " veces por semana - ");
+                    }
+                }
+            });
         } else {
-            System.out.println("No se encontró un usuario con el id_Login especificado.");
+            System.out.println("No se encontrÃ³ un usuario con el id_Login especificado.");
         }
     }
 

@@ -30,7 +30,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="botonBorrarTodo" layoutX="183.0" layoutY="323.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #EB3850;" text="Borrar todas las comidas">
+      <Button fx:id="btnMostrarDieta" layoutX="183.0" layoutY="323.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: #4e9564;" text="Mostrar Dieta">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
