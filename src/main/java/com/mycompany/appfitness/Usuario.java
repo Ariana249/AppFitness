@@ -18,7 +18,6 @@ public class Usuario implements GEA<Usuario> {
     private String apellido;
     private float peso;
     private float altura;
-    private float imc;
     private String objetivo;
     private int idLogin;
 
@@ -33,14 +32,6 @@ public class Usuario implements GEA<Usuario> {
         this.altura = altura;
         this.objetivo = objetivo;
         this.idLogin = idLogin;
-    }
-
-    public Usuario(String nombre, String apellido, float peso, float altura, String objetivo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.peso = peso;
-        this.altura = altura;
-        this.objetivo = objetivo;
     }
 
     //Getters & Setters
@@ -84,14 +75,6 @@ public class Usuario implements GEA<Usuario> {
         this.altura = altura;
     }
 
-    public float getImc() {
-        return imc;
-    }
-
-    public void setImc(float imc) {
-        this.imc = imc;
-    }
-
     public String getObjetivo() {
         return objetivo;
     }
@@ -106,16 +89,7 @@ public class Usuario implements GEA<Usuario> {
 
     public void setIdLogin(int idLogin) {
         this.idLogin = idLogin;
-    }
-
-    //Metodos    
-    public void cambiarObjetivos() {
-
-    }
-
-    public void cambiarPlan() {
-        //if para cambiarse y mostrar el actual
-    }
+    }   
 
     @Override
     public boolean guardar(Usuario usr) {

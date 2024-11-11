@@ -130,6 +130,7 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
         return ejercicios;
     }
+    
     public Ejercicio buscarTodoEjercicio(Integer id) {
         String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
         Ejercicio ej = null;

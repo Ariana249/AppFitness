@@ -11,9 +11,9 @@ package com.mycompany.appfitness;
 public abstract class ActividadFisica {
     //Atributos
 
-    private int id;
-    private String nivelDeDificultad; //principiante, intermedio, avanzado
-    private String nombre;
+    protected int id;
+    protected String nivelDeDificultad; //principiante, intermedio, avanzado
+    protected String nombre;
 
     //Constructor
     public ActividadFisica() {
