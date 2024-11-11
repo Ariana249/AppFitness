@@ -32,40 +32,38 @@ public class MostrarDietaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Inicializa los valores para el ComboBox de tipo comida
+        // Inicializar ComboBox de tipo comida
         this.tipoComida.setItems(FXCollections.observableArrayList(OpcionesComida.values()));
         tipoComida.setValue("Desayuno");
-        String comida = this.tipoComida.getValue().toString();
-        
-        Usuario usuario = new Usuario().buscarUsr(idLogin);
 
-        if (usuario != null || comida.equalsIgnoreCase("Desayuno")) {
-            ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idLogin, "Desayuno"));
+        // Cargar comidas iniciales (Desayuno por defecto)
+        actualizarListaComidas("Desayuno");
+
+        // Listener para detectar cambios en el ComboBox
+        tipoComida.valueProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue != null) {
+                actualizarListaComidas(newValue.toString());
+            }
+        });
+    }
+
+    private void actualizarListaComidas(String tipoComida) {
+        Usuario usuario = new Usuario().buscarUsr(idLogin);
+        if (usuario != null) {
+            ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idLogin, tipoComida));
             listaComida.setItems(lista);
-            
+            // Configurar el formato de cada celda para mostrar todos los atributos
             listaComida.setCellFactory(lv -> new ListCell<>() {
-                @Override
                 protected void updateItem(Comida item, boolean empty) {
                     super.updateItem(item, empty);
                     if (empty || item == null) {
                         setText(null);
                     } else {
-                        setText(item.getNombreComida()+ " - " + item.getCantProteina()+ " proteinas " + item.getCalorias()+ " calorias - " + item.getGrasas()+ " grasas ");
+                        int indice = listaComida.getItems().indexOf(item) + 1;
+                        setText(indice + ") " + item.getNombreComida()+ " - " + item.getCantProteina()+ " gr. de proteina - " + item.getCalorias()+ " calorias - " + item.getGrasas()+ " grasas");
                     }
                 }
             });
-        } else {
-            if (comida.equalsIgnoreCase("Almuerzo")) {
-                ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idLogin, "Almuerzo"));
-                listaComida.setItems(lista);
-            } else {
-                if (comida.equalsIgnoreCase("Cena")) {
-                    ObservableList<Comida> lista = FXCollections.observableArrayList(com.mostrarDieta(idLogin, "Cena"));
-                    listaComida.setItems(lista);
-                } else {
-                    System.out.println("No se encontro un usuario con el id_Login especificado.");
-                }
-            }
         }
     }
 
