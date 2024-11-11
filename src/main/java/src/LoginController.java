@@ -1,5 +1,6 @@
 package src;
 
+import database.ConeccionDB;
 import com.mycompany.appfitness.Usuario;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
@@ -17,7 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import src.LoginModel;
 
 public class LoginController implements Initializable {
 

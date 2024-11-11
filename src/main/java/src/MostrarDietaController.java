@@ -3,7 +3,6 @@ package src;
 import src.LoginModel;
 import com.mycompany.appfitness.Comida;
 import com.mycompany.appfitness.Dieta;
-import com.mycompany.appfitness.Ejercicio;
 import com.mycompany.appfitness.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
