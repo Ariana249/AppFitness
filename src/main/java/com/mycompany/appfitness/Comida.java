@@ -151,7 +151,23 @@ public class Comida implements GEA<Comida> {
         }
         return false;
     }
+    public Comida buscarTodoComida(Integer id) {
+        String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
+        Comida comi = null;
 
+        try (PreparedStatement pr = conn.prepareStatement(readQuery)) {
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                comi = new Comida(rs.getString("nombreComida"), rs.getFloat("cantProteina"), rs.getFloat("calorias"), rs.getFloat("grasas"), rs.getString("tipo"), rs.getInt("id_login"));
+            }
+            pr.close();
+        } catch (SQLException e) {
+            System.err.println("Error al buscar el usuario: " + e.getMessage());
+        }
+
+        return comi;
+    }
     @Override
     public boolean actualizar(Integer id, Comida objeto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

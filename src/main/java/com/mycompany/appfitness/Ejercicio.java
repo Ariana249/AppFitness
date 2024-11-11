@@ -130,5 +130,22 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
         return ejercicios;
     }
+    public Ejercicio buscarTodoEjercicio(Integer id) {
+        String readQuery = "SELECT * FROM usuario WHERE id_login = ?";
+        Ejercicio ej = null;
 
+        try (PreparedStatement pr = conn.prepareStatement(readQuery)) {
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                ej = new Ejercicio(rs.getString("nombreEjercicio"), rs.getString("grupo_muscular"), rs.getInt("repeticiones"), rs.getInt("series"),rs.getString("objetivo"), rs.getInt("frecuencia"),rs.getString("dificultad"), rs.getInt("id_login"));
+            }
+           
+            pr.close();
+        } catch (SQLException e) {
+            System.err.println("Error al buscar el usuario: " + e.getMessage());
+        }
+
+        return ej;
+}
 }

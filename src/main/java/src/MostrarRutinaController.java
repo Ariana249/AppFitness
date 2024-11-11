@@ -21,14 +21,25 @@ public class MostrarRutinaController implements Initializable {
     @FXML
     private Button volver;
     @FXML
-    private ListView<String> listaEjercicios;
-
+    private ListView<String> listaNombres;
+    @FXML
+    private ListView<String> listaGMuscular;
+    @FXML
+    private ListView<Float> listaRepeticiones;
+    @FXML
+    private ListView<Float> listaSeries;
+    @FXML
+    private ListView<String> listaObjetivos;
+    @FXML
+    private ListView<Float> listaFrecuencia;
+    @FXML
+    private ListView<String> listaDificultad;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Usuario usuario = new Usuario().buscarUsr(idLogin);
         if (usuario != null) {
             ObservableList<String> lista = FXCollections.observableArrayList(ej.buscarEj(idLogin));
-            listaEjercicios.setItems(lista);
+            listaNombres.setItems(lista);
         } else {
             System.out.println("No se encontró un usuario con el id_Login especificado.");
         }
