@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.appfitness;
 
 import java.sql.Connection;
@@ -10,10 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import src.ConeccionDB;
 
-/**
- *
- * @author martin
- */
 public class Dieta implements GEA<Dieta> {
 
     private int id;
@@ -32,6 +24,47 @@ public class Dieta implements GEA<Dieta> {
         this.comida = comida;
     }    
     
+    //Getters y Setters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Comida getComida() {
+        return comida;
+    }
+
+    public void setComida(Comida comida) {
+        this.comida = comida;
+    }
+
+    public Usuario getUsr() {
+        return usr;
+    }
+
+    public void setUsr(Usuario usr) {
+        this.usr = usr;
+    }
+
+    public Connection getConn() {
+        return conn;
+    }
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
     
     //Metodos
     @Override
