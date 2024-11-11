@@ -84,6 +84,7 @@ public class AgregarEjercicioController implements Initializable {
         String ser = this.series.getValue().toString();
         String reps = this.repeticiones.getValue().toString();
         String dificultadEj = this.nivelDeDificultad.getValue().toString();
+        
         if (nombreEj.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del ejercicio.");
         } else {
@@ -100,7 +101,6 @@ public class AgregarEjercicioController implements Initializable {
                         try {
                             //agregar con los nuevos elementos
 
-
                             c = new Ejercicio(nombreEj, tipoEj, Integer.parseInt(reps), Integer.parseInt(ser), objetivoEj, Integer.parseInt(frecuenciaEJ), dificultadEj, idLogin);
 
                             if (c.guardar(c)) {
@@ -108,8 +108,6 @@ public class AgregarEjercicioController implements Initializable {
                             } else {
                                 JOptionPane.showMessageDialog(null, "Hubo un error. Intente nuevamente!");
                             }
-
-                            initialize(null, null);
 
                         } catch (Exception e) {
                             System.out.println("Error: " + e.getMessage());

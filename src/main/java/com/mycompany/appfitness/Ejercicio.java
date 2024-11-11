@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.appfitness;
 
 import java.sql.Connection;
@@ -13,10 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import src.ConeccionDB;
 
-/**
- *
- * @author brook
- */
 public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
     Connection conn = ConeccionDB.connect();
@@ -74,19 +66,19 @@ public class Ejercicio extends Entrenamiento implements GEA<Ejercicio> {
 
     // Metodos
     @Override
-    public boolean guardar(Ejercicio c) {
+    public boolean guardar(Ejercicio e) {
         try {
             String sql = "INSERT INTO ejercicio (nombreEjercicio, grupo_muscular, repeticiones, series, objetivo, frecuencia, dificultad, id_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pr = (PreparedStatement) conn.prepareStatement(sql);
-            pr.setString(1, c.getNombre());
-            pr.setString(2, c.getGrupoMuscular());
-            pr.setInt(3, c.getRepeticiones());
-            pr.setInt(4, c.getSeries());
-            pr.setString(5, c.getObjetivo());
-            pr.setInt(6, c.getFrecuencia());
-            pr.setString(7, c.getNivelDeDificultad());
-            pr.setInt(8, c.getIdLogin());
+            pr.setString(1, e.getNombre());
+            pr.setString(2, e.getGrupoMuscular());
+            pr.setInt(3, e.getRepeticiones());
+            pr.setInt(4, e.getSeries());
+            pr.setString(5, e.getObjetivo());
+            pr.setInt(6, e.getFrecuencia());
+            pr.setString(7, e.getNivelDeDificultad());
+            pr.setInt(8, e.getIdLogin());
 
             pr.executeUpdate();
             pr.close();
