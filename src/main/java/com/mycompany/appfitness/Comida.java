@@ -9,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import src.ConeccionDB;
@@ -20,13 +19,12 @@ import src.ConeccionDB;
  */
 public class Comida implements GEA<Comida> {
 
-    
     private String nombreComida;
     private float cantProteina;
     private float calorias;
     private float grasas;
     private String tipo;
-    
+
     private int idLogin;
     Connection conn = ConeccionDB.connect();
 
@@ -41,8 +39,14 @@ public class Comida implements GEA<Comida> {
         this.tipo = tipo;
         this.idLogin = idLogin;
     }
-    
-    
+
+    public Comida(String nombreComida, float cantProteina, float calorias, float grasas, int idLogin) {
+        this.nombreComida = nombreComida;
+        this.cantProteina = cantProteina;
+        this.calorias = calorias;
+        this.grasas = grasas;
+        this.idLogin = idLogin;
+    }
     
     public String getNombreComida() {
         return nombreComida;
@@ -151,9 +155,10 @@ public class Comida implements GEA<Comida> {
         }
         return false;
     }
-     @Override
+
+    @Override
     public boolean actualizar(Integer id, Comida objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
+}

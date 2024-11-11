@@ -23,7 +23,6 @@
          </font>
       </Label>
       <TextField fx:id="nombreIngresado" layoutX="67.0" layoutY="117.0" prefHeight="26.0" prefWidth="387.0" promptText="Nombre" />
-      <Button layoutX="171.0" layoutY="315.0" mnemonicParsing="false" onAction="#GuardarComida" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #4e9564;" text="Agregar" />
       <ImageView fitHeight="41.0" fitWidth="28.0" layoutX="39.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/volver.png" />
@@ -38,5 +37,33 @@
       <TextField fx:id="calorias" alignment="CENTER" layoutX="171.0" layoutY="196.0" prefHeight="26.0" prefWidth="180.0" promptText="Calorías" />
       <TextField fx:id="grasas" alignment="CENTER" layoutX="171.0" layoutY="234.0" prefHeight="26.0" prefWidth="180.0" promptText="Grasas" />
       <ComboBox fx:id="tipoComida" accessibleHelp="es opcional" layoutX="171.0" layoutY="273.0" prefHeight="25.0" prefWidth="180.0" promptText="Tipo" />
+      <Label layoutX="360.0" layoutY="158.0" prefHeight="24.0" prefWidth="37.0" text="gr." textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="197.0" prefHeight="24.0" prefWidth="38.0" text="cal." textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="360.0" layoutY="235.0" prefHeight="24.0" prefWidth="37.0" text="gr." textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="239.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/++.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button accessibleHelp="mas desayuno" layoutX="239.0" layoutY="310.0" mnemonicParsing="false" onAction="#GuardarComida" opacity="0.0" prefHeight="37.0" prefWidth="43.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
